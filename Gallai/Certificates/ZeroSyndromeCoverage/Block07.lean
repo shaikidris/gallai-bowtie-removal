@@ -1,0 +1,79 @@
+/-
+Copyright (c) 2026 Idris Ali Shaik.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Idris Ali Shaik (with Codex assistance)
+-/
+import Gallai.Certificates.ZeroSyndromeCatalogue
+import Gallai.Certificates.ZeroSyndromeIndex
+import Gallai.Certificates.CompletedStarSymmetry
+import Gallai.Certificates.CompletedStarCoverage.Permutations
+
+/-! # Zero-state coverage block 07
+Source SHA256 32c2c172fa37de8b8de229fb2f531543e2e9274cfa5316796c582c6989ebdd59. Ordinary decide checks every guarded equality.
+-/
+namespace Gallai.Certificate.ZeroSyndrome.Coverage.Block07
+open CompletedStar
+open CompletedStar.Coverage
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+/-- Representative index; excluded inputs use an irrelevant default. -/
+def orbit : Fin 256 → Fin 44 := ![0, 13, 13, 14, 10, 13, 13, 0, 5, 20, 24, 19, 19, 28, 13, 40,
+    5, 24, 20, 19, 19, 13, 28, 40, 6, 28, 28, 21, 14, 28, 28, 38,
+    2, 24, 24, 10, 18, 24, 24, 38, 5, 28, 13, 19, 19, 20, 24, 40,
+    5, 13, 28, 19, 19, 24, 20, 40, 0, 20, 20, 18, 21, 20, 20, 43,
+    0, 0, 15, 0, 13, 0, 12, 35, 0, 0, 19, 0, 22, 0, 19, 41,
+    7, 28, 22, 23, 15, 22, 28, 39, 0, 0, 29, 0, 30, 0, 28, 40,
+    5, 28, 13, 19, 19, 20, 24, 40, 0, 0, 26, 0, 25, 0, 24, 39,
+    4, 30, 30, 22, 26, 19, 19, 35, 4, 31, 25, 20, 29, 23, 12, 41,
+    0, 15, 0, 0, 13, 12, 0, 35, 7, 22, 28, 23, 15, 28, 22, 39,
+    0, 19, 0, 0, 22, 19, 0, 41, 0, 29, 0, 0, 30, 28, 0, 40,
+    5, 13, 28, 19, 19, 24, 20, 40, 4, 30, 30, 22, 26, 19, 19, 35,
+    0, 26, 0, 0, 25, 24, 0, 39, 4, 25, 31, 20, 29, 12, 23, 41,
+    1, 17, 17, 16, 0, 17, 17, 36, 4, 23, 12, 20, 29, 31, 25, 41,
+    4, 12, 23, 20, 29, 25, 31, 41, 8, 29, 29, 21, 32, 29, 29, 34,
+    0, 20, 20, 18, 21, 20, 20, 43, 4, 31, 25, 20, 29, 23, 12, 41,
+    4, 25, 31, 20, 29, 12, 23, 41, 3, 27, 27, 11, 33, 27, 27, 42]
+/-- Core action. -/
+def action : Fin 256 → Fin 8 := ![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 3, 3, 7, 1,
+    0, 4, 0, 4, 3, 7, 3, 1, 0, 4, 4, 0, 7, 4, 4, 4,
+    0, 1, 1, 6, 0, 1, 1, 1, 0, 3, 7, 4, 3, 0, 4, 1,
+    0, 7, 3, 4, 3, 4, 0, 1, 7, 7, 7, 5, 7, 7, 7, 2,
+    0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 6, 0, 6, 0, 7, 0,
+    0, 6, 0, 4, 6, 2, 7, 4, 0, 0, 0, 0, 3, 0, 0, 0,
+    1, 1, 6, 5, 1, 2, 5, 3, 0, 0, 4, 0, 0, 0, 0, 0,
+    0, 2, 0, 4, 0, 2, 0, 6, 5, 2, 5, 5, 7, 2, 7, 5,
+    0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 6, 4, 6, 7, 2, 4,
+    0, 6, 0, 0, 6, 7, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0,
+    1, 6, 1, 5, 1, 5, 2, 3, 0, 0, 2, 4, 0, 0, 2, 6,
+    0, 4, 0, 0, 0, 0, 0, 0, 5, 5, 2, 5, 7, 7, 2, 5,
+    0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 6, 4, 6, 0, 4, 4,
+    4, 6, 0, 4, 6, 4, 0, 4, 0, 4, 4, 4, 4, 4, 4, 6,
+    6, 6, 6, 4, 6, 6, 6, 0, 4, 0, 4, 4, 6, 0, 6, 4,
+    4, 4, 0, 4, 6, 6, 0, 4, 4, 4, 4, 6, 4, 4, 4, 4]
+/-- Anchor action. -/
+def permutation : Fin 256 → Fin 24 := ![8, 6, 12, 4, 8, 11, 17, 0, 6, 6, 3, 5, 8, 11, 22, 6,
+    12, 1, 12, 4, 14, 20, 17, 12, 4, 1, 3, 4, 8, 20, 22, 4,
+    8, 6, 12, 4, 8, 11, 17, 8, 11, 6, 3, 19, 9, 11, 22, 11,
+    17, 1, 12, 18, 15, 20, 17, 17, 4, 1, 3, 4, 8, 20, 22, 8,
+    0, 0, 3, 0, 9, 0, 23, 20, 0, 0, 3, 0, 8, 0, 22, 7,
+    3, 0, 3, 5, 14, 20, 23, 5, 0, 0, 3, 0, 9, 0, 22, 18,
+    9, 6, 3, 19, 9, 11, 22, 11, 0, 0, 3, 0, 9, 0, 23, 20,
+    23, 7, 13, 19, 15, 21, 23, 19, 19, 7, 3, 5, 9, 20, 22, 4,
+    0, 1, 0, 0, 15, 21, 0, 22, 1, 1, 2, 4, 8, 21, 22, 4,
+    0, 1, 0, 0, 14, 20, 0, 13, 0, 1, 0, 0, 15, 20, 0, 19,
+    15, 1, 12, 18, 15, 20, 17, 17, 21, 7, 13, 18, 9, 21, 23, 18,
+    0, 1, 0, 0, 15, 21, 0, 22, 18, 1, 13, 4, 15, 20, 22, 5,
+    4, 1, 3, 4, 0, 20, 22, 4, 5, 1, 3, 19, 8, 10, 22, 18,
+    4, 1, 3, 18, 14, 20, 16, 19, 4, 1, 3, 4, 8, 20, 22, 4,
+    4, 1, 3, 4, 8, 20, 22, 8, 19, 7, 3, 5, 9, 20, 22, 4,
+    18, 1, 13, 4, 15, 20, 22, 5, 4, 1, 3, 4, 8, 20, 22, 4]
+
+/-- Every eligible index has the displayed exact symmetry witness. -/
+theorem witness (i : Fin 256) :
+    HighBoundary (zeroEncodedAt (blockIndex 7 i)) →
+    transformedState (action i) (anchorPermutation (permutation i))
+      (ZeroSyndrome.Catalogue.state (orbit i)) = zeroEncodedAt (blockIndex 7 i) := by
+  revert i
+  decide
+end Gallai.Certificate.ZeroSyndrome.Coverage.Block07

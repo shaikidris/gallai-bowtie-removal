@@ -1,0 +1,89 @@
+/-
+Copyright (c) 2026 Idris Ali Shaik.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Idris Ali Shaik (with Codex assistance)
+-/
+import Gallai.Certificates.CompletedStarCatalogue
+import Gallai.Certificates.CompletedStarCoverage.Permutations
+
+/-! # Exhaustive coverage witnesses, block 05
+
+Generated from certificate SHA256 4dbb85f7bef9f06a6b4701c7bd611c60507ecedfcf83c46b2c6b1a44828f513d.
+All 256 literal transformed-state equalities are checked by ordinary Lean decide.
+-/
+
+namespace Gallai.Certificate.CompletedStar.Coverage.Block05
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+/-- Stored representative index. -/
+def orbit : Fin 256 → Fin 67 :=
+  ![4, 22, 20, 24, 18, 21, 19, 52, 10, 33, 34, 45, 33, 42, 45, 52,
+    9, 41, 31, 21, 32, 45, 39, 60, 8, 41, 18, 34, 34, 44, 41, 64,
+    8, 40, 36, 42, 30, 24, 39, 57, 9, 40, 33, 46, 20, 33, 41, 62,
+    4, 33, 30, 33, 31, 34, 31, 61, 10, 22, 32, 44, 36, 46, 47, 61,
+    2, 20, 23, 20, 20, 17, 20, 53, 9, 20, 33, 41, 40, 33, 46, 62,
+    7, 41, 17, 41, 41, 35, 41, 63, 9, 41, 33, 20, 46, 33, 40, 62,
+    9, 40, 33, 46, 20, 33, 41, 62, 7, 40, 37, 40, 40, 23, 40, 58,
+    9, 46, 33, 40, 41, 33, 20, 62, 12, 46, 35, 46, 46, 37, 46, 53,
+    4, 24, 20, 22, 19, 21, 18, 52, 8, 34, 18, 41, 41, 44, 34, 64,
+    9, 21, 31, 41, 39, 45, 32, 60, 10, 45, 34, 33, 45, 42, 33, 52,
+    4, 33, 30, 33, 31, 34, 31, 61, 9, 46, 33, 40, 41, 33, 20, 62,
+    8, 42, 36, 40, 39, 24, 30, 57, 10, 44, 32, 22, 47, 46, 36, 61,
+    5, 27, 16, 27, 27, 28, 27, 55, 10, 36, 32, 47, 22, 46, 44, 61,
+    3, 32, 29, 32, 32, 35, 32, 65, 10, 47, 32, 36, 44, 46, 22, 61,
+    10, 22, 32, 44, 36, 46, 47, 61, 12, 46, 35, 46, 46, 37, 46, 53,
+    10, 44, 32, 22, 47, 46, 36, 61, 11, 43, 38, 43, 43, 26, 43, 59]
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+/-- Core action index, in the verifier's new-to-old row convention. -/
+def action : Fin 256 → Fin 8 :=
+  ![0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 4, 0, 2, 0, 2, 6,
+    0, 0, 0, 6, 2, 3, 4, 0, 4, 7, 6, 0, 2, 0, 6, 0,
+    0, 0, 4, 4, 0, 6, 1, 0, 3, 5, 5, 0, 7, 1, 1, 1,
+    6, 7, 4, 6, 3, 6, 1, 0, 5, 7, 5, 5, 2, 7, 2, 5,
+    1, 1, 0, 1, 1, 1, 1, 0, 1, 6, 4, 3, 4, 3, 2, 0,
+    4, 4, 6, 4, 4, 2, 4, 0, 1, 3, 4, 6, 2, 3, 4, 0,
+    1, 4, 4, 2, 6, 3, 3, 0, 1, 1, 4, 1, 1, 6, 1, 0,
+    1, 2, 4, 4, 3, 3, 6, 0, 2, 5, 5, 5, 5, 2, 5, 7,
+    0, 0, 0, 0, 1, 1, 0, 0, 4, 0, 6, 7, 6, 0, 2, 0,
+    0, 6, 0, 0, 4, 3, 2, 0, 0, 0, 4, 0, 2, 0, 2, 6,
+    6, 6, 4, 7, 1, 6, 3, 0, 3, 0, 5, 5, 1, 1, 7, 1,
+    0, 4, 4, 0, 1, 6, 0, 0, 5, 5, 5, 7, 2, 7, 2, 5,
+    0, 0, 6, 0, 0, 0, 0, 0, 4, 0, 4, 0, 6, 6, 4, 4,
+    6, 6, 4, 6, 6, 6, 6, 0, 4, 0, 4, 0, 4, 6, 6, 4,
+    4, 6, 4, 4, 0, 6, 0, 4, 0, 4, 4, 4, 4, 0, 4, 6,
+    4, 4, 4, 6, 0, 6, 0, 4, 4, 4, 4, 4, 4, 6, 4, 4]
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+/-- Computable anchor permutation index. -/
+def permutation : Fin 256 → Fin 24 :=
+  ![14, 6, 12, 5, 14, 11, 17, 14, 6, 6, 2, 4, 8, 10, 17, 2,
+    12, 0, 12, 5, 14, 11, 16, 12, 3, 6, 3, 5, 14, 20, 22, 5,
+    14, 6, 12, 5, 14, 11, 17, 14, 9, 0, 2, 18, 14, 11, 23, 11,
+    13, 0, 13, 5, 15, 21, 17, 17, 2, 0, 12, 5, 14, 20, 17, 13,
+    10, 7, 2, 18, 9, 10, 23, 10, 7, 0, 12, 18, 14, 10, 23, 7,
+    2, 0, 2, 5, 14, 10, 16, 2, 18, 7, 13, 5, 9, 20, 16, 18,
+    9, 0, 2, 18, 14, 11, 23, 9, 10, 7, 2, 18, 9, 10, 23, 10,
+    23, 7, 3, 5, 9, 21, 16, 23, 10, 0, 2, 5, 14, 10, 16, 2,
+    16, 0, 13, 19, 15, 21, 16, 16, 2, 0, 2, 19, 8, 10, 16, 0,
+    13, 0, 13, 5, 14, 21, 16, 13, 19, 1, 3, 19, 15, 20, 22, 3,
+    12, 0, 12, 5, 15, 11, 17, 15, 23, 7, 3, 5, 9, 21, 16, 21,
+    16, 0, 13, 19, 15, 21, 16, 16, 3, 0, 13, 5, 15, 10, 16, 12,
+    2, 0, 2, 5, 14, 10, 16, 2, 12, 0, 2, 4, 14, 21, 16, 3,
+    2, 0, 2, 5, 14, 10, 16, 2, 13, 1, 3, 5, 14, 11, 16, 2,
+    2, 0, 12, 5, 14, 20, 17, 13, 10, 0, 2, 5, 14, 10, 16, 2,
+    3, 0, 13, 5, 15, 10, 16, 12, 2, 0, 2, 5, 14, 10, 16, 2]
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+/-- Every indexed state in this block has the displayed symmetry witness. -/
+theorem witness (i : Fin 256) :
+    transformedState (action i) (anchorPermutation (permutation i))
+      (Catalogue.state (orbit i)) = encodedAt (blockIndex 5 i) := by
+  revert i
+  decide
+
+end Gallai.Certificate.CompletedStar.Coverage.Block05

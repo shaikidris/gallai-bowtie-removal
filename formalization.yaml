@@ -1,0 +1,64 @@
+version: "v0.4"
+project:
+  name: "Bowtie removal in Gallai path decompositions"
+  description: >-
+    Structural sufficient conditions for ceiling-budget path decompositions
+    of finite simple graphs with whole bowtie components in the induced
+    even-degree graph. The selected results include endpoint-preserving
+    removal, sharp full-incidence star expansion, composition for a stated
+    supported class, and counting corollaries for the two-bowtie kernel.
+    The unrestricted two-exception conjecture is not claimed.
+  authors:
+    - name: "Idris Ali Shaik"
+  responsible_maintainers:
+    - name: "Idris Ali Shaik"
+  license: "Apache-2.0"
+sources:
+  - title: "Bowtie removal in Gallai path decompositions"
+    authors: ["Idris Ali Shaik"]
+    type: "article"
+    location: "Unpublished draft v0.8; Theorems A, B, C and Corollaries A1, A2"
+    relationship: "formalizes"
+    author_endorsement: "participated"
+    note: "Source file digest and extracted working-tree inventory are in SOURCE_PROVENANCE.md. No public preprint identifier or novelty claim is asserted."
+  - title: "Gallai's Conjecture on Path Decompositions"
+    authors: ["Geng-Hua Fan", "Jian-Feng Hou", "Chui-Xiang Zhou"]
+    id: "doi:10.1007/s40305-022-00435-3"
+    type: "article"
+    relationship: "formalizes"
+    location: "One-exception endpoint theorem and supporting lemmas"
+    author_endorsement: "not-contacted"
+  - title: "Towards Gallai's path decomposition conjecture"
+    authors: ["Fábio Botler", "Maycon Sambinelli"]
+    id: "https://arxiv.org/abs/1911.04546"
+    type: "article"
+    relationship: "formalizes"
+    location: "Floor-or-SET theorem and supporting inputs"
+    author_endorsement: "not-contacted"
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05C38", "05C70"]
+status:
+  scope: "Six selected structural declarations; extracted release verification in progress."
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - {declaration: "Gallai.Palomar.theoremA", file: "Solution.lean", comparator_config: "comparator.json"}
+    - {declaration: "Gallai.Palomar.expansion", file: "Solution.lean", comparator_config: "comparator.json"}
+    - {declaration: "Gallai.Palomar.expansionSharp", file: "Solution.lean", comparator_config: "comparator.json"}
+    - {declaration: "Gallai.Palomar.theoremC", file: "Solution.lean", comparator_config: "comparator.json"}
+    - {declaration: "Gallai.Palomar.corollaryA1", file: "Solution.lean", comparator_config: "comparator.json"}
+    - {declaration: "Gallai.Palomar.corollaryA2", file: "Solution.lean", comparator_config: "comparator.json"}
+automation:
+  methods:
+    - method: "agent"
+      framework: "Codex"
+      tool_setup: "Lean/Lake, project-local finite certificate tools and tracked proof iterations."
+      prompting_notes: "Human-selected scope, iterative coding and builds, milestone gates and manuscript alignment."
+  notes: "Substantial AI assistance in proofs, formalization, diagnostics and packaging. Full model/cost history not reconstructed; no claim of line-by-line human review."
+fidelity:
+  divergences: "Indexed oriented nonempty simple paths represent edge partitions. Isolated vertices contribute no path. A1 allows distinct witnesses for the two choices of centre. No intentional weakening of selected statements."
+review:
+  status: "agent-reviewed"
+  notes: "Source native formal gates passed; extracted Comparator, independent-kernel and current Palomar replay are pending. Not human peer reviewed or registered."

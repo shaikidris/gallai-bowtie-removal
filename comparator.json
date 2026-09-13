@@ -1,0 +1,12 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Gallai.Palomar.theoremA", "Gallai.Palomar.expansion",
+    "Gallai.Palomar.expansionSharp", "Gallai.Palomar.theoremC",
+    "Gallai.Palomar.corollaryA1", "Gallai.Palomar.corollaryA2"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}
