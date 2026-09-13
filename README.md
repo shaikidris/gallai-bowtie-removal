@@ -1,4 +1,4 @@
-# Bowtie removal in Gallai path decompositions
+# Gallai’s Path Decomposition Conjecture for Graphs with Small Bowtie Boundaries
 
 This is a substantive extracted Lean development for structural path-decomposition
 results, prepared for a prospective Palomar entry. **Preparation is in progress;

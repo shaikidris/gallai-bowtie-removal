@@ -1,5 +1,11 @@
 # Source provenance
 
+Title-only manuscript update: the current name is *Gallai’s Path Decomposition
+Conjecture for Graphs with Small Bowtie Boundaries*, with source SHA-256
+296f8dc66694dc2b7b8df8d2e64882a827a2283c8ef7d23e1a454b78c0633a2a.
+The extraction inventory and original manuscript hash below remain historical
+provenance, not hashes of this title-revised source. Proof code is unchanged.
+
 This is substantive extracted proof code, not a thin wrapper. The authoritative
 release snapshot will be the exact immutable commit supplied at intake, after
 the required validations. No such submitted commit exists yet.

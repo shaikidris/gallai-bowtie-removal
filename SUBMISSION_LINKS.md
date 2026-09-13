@@ -8,7 +8,7 @@ Three distinct records are planned:
 | Record | Object | Identifier/status |
 |---|---|---|
 | Zenodo | Apache-2.0 Lean software source archive at an immutable release | Not reserved or published |
-| SSRN | Manuscript *Bowtie removal in Gallai path decompositions* | Not submitted |
+| SSRN | Manuscript *Gallai’s Path Decomposition Conjecture for Graphs with Small Bowtie Boundaries* | User reports submitted on 2026-09-13; identifier and public landing page pending |
 | Palomar | Six declarations selected in comparator.json | Independent verification and registration pending |
 
 After an SSRN landing page exists, replace the unpublished-source location in

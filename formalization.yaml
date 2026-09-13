@@ -1,20 +1,22 @@
 version: "v0.4"
 project:
-  name: "Bowtie removal in Gallai path decompositions"
+  name: "Gallai’s Path Decomposition Conjecture for Graphs with Small Bowtie Boundaries"
   description: >-
-    Structural sufficient conditions for ceiling-budget path decompositions
-    of finite simple graphs with whole bowtie components in the induced
-    even-degree graph. The selected results include endpoint-preserving
-    removal, sharp full-incidence star expansion, composition for a stated
-    supported class, and counting corollaries for the two-bowtie kernel.
-    The unrestricted two-exception conjecture is not claimed.
+    We prove sufficient conditions for partitioning the edges of a connected
+    finite simple graph into at most ⌈|V(G)|/2⌉ simple paths. The results
+    concern bowtie components—two triangles sharing exactly one vertex—in
+    the subgraph induced by even-degree vertices. They include removal
+    preserving specified endpoints, a sharp full-incidence star expansion,
+    composition under explicit boundary hypotheses, and corollaries for
+    graphs with two bowtie components. The unrestricted two-exception
+    conjecture remains open.
   authors:
     - name: "Idris Ali Shaik"
   responsible_maintainers:
     - name: "Idris Ali Shaik"
   license: "Apache-2.0"
 sources:
-  - title: "Bowtie removal in Gallai path decompositions"
+  - title: "Gallai’s Path Decomposition Conjecture for Graphs with Small Bowtie Boundaries"
     authors: ["Idris Ali Shaik"]
     type: "article"
     location: "Unpublished draft v0.8; Theorems A, B, C and Corollaries A1, A2"

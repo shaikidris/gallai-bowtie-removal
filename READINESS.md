@@ -1,6 +1,6 @@
 # Palomar readiness tracker
 
-Status: PREPARATION. Contract, Apache-2.0, and private GitHub checkpoint/push approved. Public publication is not approved.
+Status: PREPARATION. Contract and Apache-2.0 approved. Public GitHub visibility was explicitly approved and verified PUBLIC on 2026-09-13. A verified release and Palomar submission remain pending.
 Research theorem scope: eight of eight paper deliveries formally closed.
 Release selected surface: six declarations, corresponding to A/B/C/A1/A2.
 
@@ -53,6 +53,18 @@ Linux replay. No external state has changed.
 Remaining named obligations: standalone Solution build; Comparator and NanoDa;
 complete current prepare/full replay; final independent statement/readability
 review; immutable source/release checkpoint and authorized public handoff.
+
+## Public repository and resumed release build — 2026-09-13
+
+- User approved public visibility, a release tag, and Palomar submission preparation.
+- GitHub `shaikidris/gallai-bowtie-removal` was changed from PRIVATE to PUBLIC
+  and verified through the GitHub API. No release tag or registry submission
+  was created by that visibility change.
+- No standalone `Solution.olean` was present when the release was resumed.
+  `lake build Challenge Solution` was started in execution session 9904;
+  a completion result must be recorded before treating this gate as passed.
+- Comparator/NanoDa and current preflight/full replay remain pending.
+- Live Palomar intake is a user handoff, not an agent-driven submission.
 
 ## Private checkpoint and cross-record preparation — 2026-09-13
 
