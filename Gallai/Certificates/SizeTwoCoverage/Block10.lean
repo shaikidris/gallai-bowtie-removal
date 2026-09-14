@@ -3,80 +3,40 @@ Copyright (c) 2026 Idris Ali Shaik.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Idris Ali Shaik (with Codex assistance)
 -/
-import Gallai.Certificates.SizeTwoCatalogueRows
-import Gallai.Certificates.SizeTwoIndex
-import Gallai.Certificates.CompletedStarCoverage.Permutations
+import Gallai.Certificates.SizeTwoCoverage.Block10.Core
+import Gallai.Certificates.SizeTwoCoverage.Block10.Sub0
+import Gallai.Certificates.SizeTwoCoverage.Block10.Sub1
+import Gallai.Certificates.SizeTwoCoverage.Block10.Sub2
+import Gallai.Certificates.SizeTwoCoverage.Block10.Sub3
+import Mathlib.Tactic.FinCases
 
-/-! # Size-two exhaustive symmetry coverage block 10
-Source SHA256 fd5147fd306d683ad48417072994ce74056cad840b5d22648c0687d132a20da6. Literal equalities, checked by ordinary Lean decide.
-The anchor action also preserves the normalized syndrome pair.
--/
 namespace Gallai.Certificate.SizeTwo.Coverage.Block10
 open CompletedStar CompletedStar.Coverage
 set_option maxRecDepth 100000
-set_option maxHeartbeats 0
-
-/-- Representative index for each original state. -/
-def orbit : Fin 256 → Fin 234 := ![1, 37, 87, 84, 86, 85, 166, 201, 4, 41, 91, 89, 90, 88, 169, 204,
-    10, 46, 93, 105, 98, 108, 170, 206, 7, 44, 104, 92, 108, 96, 173, 208,
-    9, 45, 99, 109, 93, 104, 171, 205, 8, 43, 109, 97, 105, 92, 172, 207,
-    13, 49, 106, 112, 110, 111, 174, 210, 15, 52, 113, 115, 102, 114, 177, 213,
-    4, 41, 91, 89, 90, 88, 169, 204, 16, 54, 118, 95, 117, 116, 181, 216,
-    20, 59, 122, 130, 126, 132, 182, 206, 18, 44, 130, 120, 133, 125, 184, 219,
-    19, 58, 126, 133, 121, 129, 171, 217, 8, 57, 132, 125, 129, 119, 183, 218,
-    22, 61, 131, 135, 103, 134, 185, 220, 23, 63, 107, 137, 128, 136, 188, 222,
-    10, 46, 93, 105, 98, 108, 170, 206, 20, 59, 122, 130, 126, 132, 182, 206,
-    25, 67, 139, 98, 148, 122, 190, 226, 29, 74, 108, 143, 130, 147, 192, 226,
-    25, 71, 141, 126, 140, 93, 192, 227, 29, 75, 132, 150, 105, 144, 190, 227,
-    10, 59, 144, 140, 143, 139, 197, 232, 20, 46, 147, 148, 150, 141, 198, 232,
-    7, 44, 104, 92, 108, 96, 173, 208, 18, 44, 130, 120, 133, 125, 184, 219,
-    29, 74, 108, 143, 130, 147, 192, 226, 24, 65, 153, 96, 157, 120, 191, 226,
-    29, 76, 133, 145, 104, 146, 191, 227, 24, 70, 155, 125, 154, 92, 192, 227,
-    31, 78, 154, 146, 153, 143, 173, 219, 32, 78, 157, 147, 155, 145, 184, 208]
-/-- Core row action. -/
-def action : Fin 256 → Fin 8 := ![0, 0, 0, 1, 0, 1, 0, 0, 2, 2, 2, 3, 2, 3, 2, 2,
-    2, 2, 3, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2,
-    2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 3, 2, 2, 2,
-    2, 2, 7, 2, 3, 2, 2, 2, 2, 2, 3, 2, 7, 2, 2, 2,
-    0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 6, 0, 1, 0, 0,
-    2, 2, 2, 2, 2, 2, 3, 7, 3, 7, 3, 2, 3, 2, 2, 2,
-    2, 2, 3, 2, 2, 2, 7, 3, 7, 3, 3, 3, 3, 2, 2, 2,
-    2, 2, 7, 2, 7, 2, 2, 2, 2, 2, 7, 2, 7, 2, 2, 2,
-    0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 6,
-    1, 0, 0, 6, 0, 6, 1, 1, 3, 0, 7, 0, 7, 4, 6, 4,
-    4, 0, 2, 7, 0, 6, 1, 3, 4, 0, 7, 0, 7, 0, 4, 4,
-    7, 7, 7, 7, 7, 5, 2, 2, 7, 7, 3, 5, 7, 5, 2, 5,
-    1, 1, 1, 1, 1, 0, 0, 0, 1, 6, 1, 0, 1, 0, 0, 0,
-    1, 1, 6, 2, 6, 5, 7, 5, 1, 0, 0, 6, 4, 6, 0, 0,
-    6, 1, 6, 2, 6, 5, 5, 7, 4, 0, 2, 7, 0, 6, 0, 0,
-    2, 2, 7, 2, 5, 5, 7, 7, 2, 5, 2, 2, 5, 5, 7, 7]
-/-- Anchor action, restricted to the pair-preserving subgroup. -/
-def permutation : Fin 256 → Fin 24 := ![7, 7, 0, 1, 6, 7, 7, 7, 7, 7, 0, 1, 6, 7, 7, 7,
-    0, 0, 0, 1, 6, 7, 0, 0, 1, 1, 0, 1, 6, 7, 1, 1,
-    6, 6, 0, 1, 6, 7, 6, 6, 7, 7, 0, 1, 6, 7, 7, 7,
-    7, 7, 0, 1, 6, 7, 7, 7, 7, 7, 0, 1, 6, 7, 7, 7,
-    7, 7, 0, 1, 6, 7, 7, 7, 7, 7, 0, 1, 6, 7, 7, 7,
-    0, 0, 0, 1, 6, 7, 0, 7, 1, 7, 0, 1, 6, 7, 1, 1,
-    6, 6, 0, 1, 6, 7, 7, 6, 7, 7, 0, 1, 6, 7, 7, 7,
-    7, 7, 0, 1, 6, 7, 7, 7, 7, 7, 0, 1, 6, 7, 7, 7,
-    0, 0, 0, 1, 6, 7, 0, 0, 0, 0, 0, 1, 6, 7, 0, 7,
-    0, 0, 0, 1, 6, 7, 0, 0, 0, 1, 0, 1, 6, 7, 1, 7,
-    7, 6, 0, 1, 6, 7, 6, 0, 7, 7, 0, 1, 6, 7, 7, 7,
-    7, 7, 0, 1, 6, 7, 0, 0, 7, 7, 0, 1, 6, 7, 0, 7,
-    1, 1, 0, 1, 6, 7, 1, 1, 1, 7, 0, 1, 6, 7, 1, 1,
-    0, 0, 0, 1, 6, 7, 1, 7, 1, 1, 0, 1, 6, 7, 1, 1,
-    6, 6, 0, 1, 6, 7, 7, 1, 7, 7, 0, 1, 6, 7, 7, 7,
-    1, 1, 0, 1, 6, 7, 7, 7, 1, 7, 0, 1, 6, 7, 7, 7]
-
+set_option maxHeartbeats 4000000
+private theorem witness_chunked (q : Fin 4) (r : Fin 64) :
+    (∀ j : Fin 4, (anchorPermutation (permutation ⟨q.val * 64 + r.val, by omega⟩) j).val < 2 ↔ j.val < 2) ∧
+    transformedState (action ⟨q.val * 64 + r.val, by omega⟩)
+      (anchorPermutation (permutation ⟨q.val * 64 + r.val, by omega⟩))
+      (SizeTwo.Catalogue.Rows.state (orbit ⟨q.val * 64 + r.val, by omega⟩)) =
+        pairEncodedAt (blockIndex 10 ⟨q.val * 64 + r.val, by omega⟩) := by
+  fin_cases q
+  · exact witness_chunk_0 r
+  · exact witness_chunk_1 r
+  · exact witness_chunk_2 r
+  · exact witness_chunk_3 r
 /-- Every original indexed state is the displayed pair-preserving symmetry image. -/
 theorem witness (i : Fin 256) :
     (∀ j : Fin 4, (anchorPermutation (permutation i) j).val < 2 ↔ j.val < 2) ∧
     transformedState (action i) (anchorPermutation (permutation i))
       (SizeTwo.Catalogue.Rows.state (orbit i)) = pairEncodedAt (blockIndex 10 i) := by
-  fin_cases i
-  all_goals
-    refine ⟨by decide, ?_⟩
-    funext j
-    fin_cases j <;> rfl
+  let q : Fin 4 := ⟨i.val / 64, by omega⟩
+  let r : Fin 64 := ⟨i.val % 64, by omega⟩
+  have h := witness_chunked q r
+  have heq : (⟨q.val * 64 + r.val, by omega⟩ : Fin 256) = i := by
+    apply Fin.ext
+    dsimp [q, r]
+    omega
+  simpa only [heq] using h
 
 end Gallai.Certificate.SizeTwo.Coverage.Block10

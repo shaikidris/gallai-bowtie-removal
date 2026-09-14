@@ -3,87 +3,36 @@ Copyright (c) 2026 Idris Ali Shaik.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Idris Ali Shaik (with Codex assistance)
 -/
-import Gallai.Certificates.CompletedStarCatalogue
-import Gallai.Certificates.CompletedStarCoverage.Permutations
-
-/-! # Exhaustive coverage witnesses, block 08
-
-Generated from certificate SHA256 4dbb85f7bef9f06a6b4701c7bd611c60507ecedfcf83c46b2c6b1a44828f513d.
-All 256 literal transformed-state equalities are checked by ordinary Lean decide.
--/
+import Gallai.Certificates.CompletedStarCoverage.Block08.Core
+import Gallai.Certificates.CompletedStarCoverage.Block08.Sub0
+import Gallai.Certificates.CompletedStarCoverage.Block08.Sub1
+import Gallai.Certificates.CompletedStarCoverage.Block08.Sub2
+import Gallai.Certificates.CompletedStarCoverage.Block08.Sub3
+import Mathlib.Tactic.FinCases
 
 namespace Gallai.Certificate.CompletedStar.Coverage.Block08
-
-set_option maxRecDepth 100000 in
-set_option maxHeartbeats 0 in
-/-- Stored representative index. -/
-def orbit : Fin 256 → Fin 67 :=
-  ![1, 15, 15, 13, 14, 15, 15, 49, 4, 18, 22, 21, 20, 19, 24, 52,
-    4, 22, 18, 21, 20, 24, 19, 52, 2, 20, 20, 17, 23, 20, 20, 53,
-    3, 21, 21, 25, 17, 21, 21, 51, 4, 19, 24, 21, 20, 18, 22, 52,
-    4, 24, 19, 21, 20, 22, 18, 52, 5, 27, 27, 28, 16, 27, 27, 55,
-    4, 18, 22, 21, 20, 19, 24, 52, 8, 30, 40, 24, 36, 39, 42, 57,
-    10, 33, 33, 42, 34, 45, 45, 52, 9, 20, 40, 33, 33, 41, 46, 62,
-    9, 32, 41, 45, 31, 39, 21, 60, 4, 31, 33, 34, 30, 31, 33, 61,
-    8, 34, 41, 44, 18, 41, 34, 64, 10, 36, 22, 46, 32, 47, 44, 61,
-    4, 22, 18, 21, 20, 24, 19, 52, 10, 33, 33, 42, 34, 45, 45, 52,
-    8, 40, 30, 24, 36, 42, 39, 57, 9, 40, 20, 33, 33, 46, 41, 62,
-    9, 41, 32, 45, 31, 21, 39, 60, 8, 41, 34, 44, 18, 34, 41, 64,
-    4, 33, 31, 34, 30, 33, 31, 61, 10, 22, 36, 46, 32, 44, 47, 61,
-    2, 20, 20, 17, 23, 20, 20, 53, 9, 20, 40, 33, 33, 41, 46, 62,
-    9, 40, 20, 33, 33, 46, 41, 62, 7, 40, 40, 23, 37, 40, 40, 58,
-    7, 41, 41, 35, 17, 41, 41, 63, 9, 41, 46, 33, 33, 20, 40, 62,
-    9, 46, 41, 33, 33, 40, 20, 62, 12, 46, 46, 37, 35, 46, 46, 53]
-
-set_option maxRecDepth 100000 in
-set_option maxHeartbeats 0 in
-/-- Core action index, in the verifier's new-to-old row convention. -/
-def action : Fin 256 → Fin 8 :=
-  ![0, 0, 0, 1, 0, 0, 0, 0, 2, 2, 2, 3, 2, 3, 2, 2,
-    2, 2, 2, 3, 2, 2, 3, 2, 3, 3, 3, 3, 2, 3, 3, 2,
-    2, 2, 2, 2, 2, 2, 2, 3, 2, 3, 2, 3, 2, 2, 2, 2,
-    2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 7, 2, 2, 2,
-    0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 6, 4, 1, 4, 0,
-    0, 2, 0, 0, 4, 2, 0, 6, 3, 7, 5, 1, 5, 1, 0, 1,
-    0, 2, 0, 3, 0, 4, 6, 0, 6, 3, 7, 6, 4, 1, 6, 0,
-    4, 2, 7, 0, 6, 6, 0, 0, 5, 2, 7, 7, 5, 2, 5, 5,
-    0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 2, 0, 4, 0, 2, 6,
-    0, 0, 0, 6, 4, 4, 1, 0, 3, 5, 7, 1, 5, 0, 1, 1,
-    0, 0, 2, 3, 0, 6, 4, 0, 4, 7, 2, 0, 6, 0, 6, 0,
-    6, 7, 3, 6, 4, 6, 1, 0, 5, 7, 2, 7, 5, 5, 2, 5,
-    1, 1, 1, 1, 0, 1, 1, 0, 1, 6, 4, 3, 4, 3, 2, 0,
-    1, 4, 6, 3, 4, 2, 3, 0, 1, 1, 1, 6, 4, 1, 1, 0,
-    4, 4, 4, 2, 6, 4, 4, 0, 1, 3, 2, 3, 4, 6, 4, 0,
-    1, 2, 3, 3, 4, 4, 6, 0, 2, 5, 5, 2, 5, 5, 5, 7]
-
-set_option maxRecDepth 100000 in
-set_option maxHeartbeats 0 in
-/-- Computable anchor permutation index. -/
-def permutation : Fin 256 → Fin 24 :=
-  ![8, 6, 12, 4, 8, 11, 17, 8, 6, 6, 2, 4, 8, 10, 17, 6,
-    12, 0, 12, 5, 14, 11, 16, 12, 4, 1, 3, 4, 8, 20, 22, 4,
-    8, 6, 12, 4, 8, 11, 17, 8, 11, 7, 12, 18, 9, 11, 23, 11,
-    17, 6, 13, 19, 15, 21, 17, 17, 8, 6, 12, 4, 8, 11, 17, 8,
-    6, 6, 2, 4, 8, 10, 17, 6, 6, 6, 2, 4, 8, 10, 17, 6,
-    2, 0, 2, 5, 14, 10, 16, 14, 1, 6, 12, 4, 14, 20, 22, 4,
-    8, 6, 12, 4, 8, 11, 17, 8, 9, 7, 12, 18, 9, 10, 17, 10,
-    15, 6, 2, 19, 15, 21, 17, 17, 14, 6, 12, 19, 8, 10, 17, 9,
-    12, 0, 12, 5, 14, 11, 16, 12, 0, 0, 2, 4, 8, 10, 16, 8,
-    12, 0, 12, 5, 14, 11, 16, 12, 3, 6, 12, 5, 8, 20, 22, 5,
-    14, 6, 12, 5, 14, 11, 17, 14, 9, 0, 12, 18, 9, 11, 23, 11,
-    15, 6, 13, 19, 15, 11, 16, 16, 8, 6, 12, 18, 14, 11, 16, 15,
-    4, 1, 3, 4, 8, 20, 22, 4, 1, 6, 12, 4, 14, 20, 22, 1,
-    3, 6, 12, 5, 8, 20, 22, 3, 4, 1, 3, 4, 8, 20, 22, 4,
-    8, 6, 12, 4, 8, 11, 17, 8, 20, 1, 3, 18, 15, 11, 17, 20,
-    22, 1, 3, 19, 9, 11, 17, 22, 4, 6, 12, 4, 8, 11, 17, 8]
-
-set_option maxRecDepth 100000 in
-set_option maxHeartbeats 0 in
-/-- Every indexed state in this block has the displayed symmetry witness. -/
+set_option maxRecDepth 100000
+set_option maxHeartbeats 4000000
+private theorem witness_chunked (q : Fin 4) (r : Fin 64) :
+    transformedState (action ⟨q.val * 64 + r.val, by omega⟩)
+      (anchorPermutation (permutation ⟨q.val * 64 + r.val, by omega⟩))
+      (Catalogue.state (orbit ⟨q.val * 64 + r.val, by omega⟩)) =
+        encodedAt (blockIndex 8 ⟨q.val * 64 + r.val, by omega⟩) := by
+  fin_cases q
+  · exact witness_chunk_0 r
+  · exact witness_chunk_1 r
+  · exact witness_chunk_2 r
+  · exact witness_chunk_3 r
 theorem witness (i : Fin 256) :
     transformedState (action i) (anchorPermutation (permutation i))
       (Catalogue.state (orbit i)) = encodedAt (blockIndex 8 i) := by
-  revert i
-  decide
+  let q : Fin 4 := ⟨i.val / 64, by omega⟩
+  let r : Fin 64 := ⟨i.val % 64, by omega⟩
+  have h := witness_chunked q r
+  have heq : (⟨q.val * 64 + r.val, by omega⟩ : Fin 256) = i := by
+    apply Fin.ext
+    dsimp [q, r]
+    omega
+  simpa only [heq] using h
 
 end Gallai.Certificate.CompletedStar.Coverage.Block08

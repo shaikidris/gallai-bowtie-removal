@@ -70,31 +70,55 @@ def Decomposition.endpointCount {G : SimpleGraph V} [DecidableEq V]
 def HasPathBudget (G : SimpleGraph V) (k : ℕ) : Prop :=
   ∃ D : Decomposition G, D.size ≤ k
 
+section PathBudgetSupport
+variable {G : SimpleGraph V}
+namespace Decomposition
+universe v
+/-- Reindex an exact finite path family, matching the proof-library definition. -/
+noncomputable def ofFamily {I : Type v} [Fintype I] (paths : I → NonemptyPath G)
+    (hcover : ∀ e ∈ G.edgeSet, ∃! i, e ∈ (paths i).walk.edges) : Decomposition G where
+  size := Fintype.card I
+  path := fun i => paths ((Fintype.equivFin I).symm i)
+  covers := by
+    intro e he
+    obtain ⟨i, hi, hu⟩ := hcover e he
+    refine ⟨Fintype.equivFin I i, ?_, ?_⟩
+    · have hp : paths ((Fintype.equivFin I).symm (Fintype.equivFin I i)) = paths i :=
+        congrArg paths ((Fintype.equivFin I).symm_apply_apply i)
+      exact (congrArg (fun P : NonemptyPath G => e ∈ P.walk.edges) hp).mpr hi
+    intro j hj
+    apply (Fintype.equivFin I).symm.injective
+    simpa using hu ((Fintype.equivFin I).symm j) hj
+end Decomposition
+
+/-- Each edge is the exact edge list of a nonempty simple path. -/
+theorem exists_singleEdgePath (e : Sym2 V) (he : e ∈ G.edgeSet) :
+    ∃ P : NonemptyPath G, P.walk.edges = [e] := by
+  induction e using Sym2.ind with
+  | _ a b =>
+    have hab : G.Adj a b := he
+    refine ⟨⟨a, b, .cons hab .nil, ?_, ?_⟩, by simp⟩
+    · simp [SimpleGraph.Walk.cons_isPath_iff, hab.ne]
+    · simp
+end PathBudgetSupport
+
 /-- Every finite graph admits a decomposition, taking each edge separately. -/
 theorem exists_pathBudget [Fintype V] (G : SimpleGraph V) :
     ∃ k, HasPathBudget G k := by
   classical
-  have single (e : Sym2 V) (he : e ∈ G.edgeSet) :
-      ∃ P : NonemptyPath G, P.walk.edges = [e] := by
-    induction e using Sym2.ind with
-    | _ a b =>
-      have hab : G.Adj a b := he
-      refine ⟨⟨a, b, .cons hab .nil, ?_, ?_⟩, by simp⟩
-      · simp [SimpleGraph.Walk.cons_isPath_iff, hab.ne]
-      · simp
-  let eqv := Fintype.equivFin G.edgeSet
-  let path (i : Fin (Fintype.card G.edgeSet)) :=
-    (single (eqv.symm i).val (eqv.symm i).property).choose
-  have edges (i) : (path i).walk.edges = [(eqv.symm i).val] :=
-    (single (eqv.symm i).val (eqv.symm i).property).choose_spec
-  refine ⟨Fintype.card G.edgeSet, ⟨_, path, ?_⟩, le_rfl⟩
-  intro e he
-  refine ⟨eqv ⟨e, he⟩, ?_, ?_⟩
-  · simp [edges]
-  · intro i hi
-    have hh : (eqv.symm i).val = e := by simpa [edges, eq_comm] using hi
-    have hv : eqv.symm i = ⟨e, he⟩ := Subtype.ext hh
-    exact (eqv.symm.injective (by simpa using hv))
+  let paths (e : G.edgeSet) : NonemptyPath G :=
+    (exists_singleEdgePath (G := G) e.val e.property).choose
+  have hedges (e : G.edgeSet) : (paths e).walk.edges = [e.val] :=
+    (exists_singleEdgePath (G := G) e.val e.property).choose_spec
+  have hcover : ∀ e ∈ G.edgeSet, ∃! i, e ∈ (paths i).walk.edges := by
+    intro e he
+    refine ⟨⟨e, he⟩, ?_, ?_⟩
+    · simp [hedges]
+    · intro i hi
+      simp only [hedges, List.mem_singleton] at hi
+      exact Subtype.ext hi.symm
+  let D := Decomposition.ofFamily paths hcover
+  exact ⟨D.size, D, le_rfl⟩
 
 /-- The least path budget. Existence above makes this a genuine minimum. -/
 noncomputable def pathNumber [Fintype V] (G : SimpleGraph V) : ℕ := by
@@ -144,16 +168,29 @@ def row (i : Fin 5) : Finset V := G.neighborFinset (B.label i) \ B.vertices
 /-- All external neighbours of the bowtie. -/
 def anchors : Finset V := Finset.univ.biUnion B.row
 /-- Private vertices with nonempty external rows. -/
-def activePrivate : Finset (Fin 5) :=
+theorem activePrivate._proof_1 : @NeZero Nat (@Zero.ofOfNat0 Nat (instOfNatNat (nat_lit 0))) (4 + 1) :=
+  Nat.instNeZeroSucc
+attribute [local instance] activePrivate._proof_1
+def activePrivate {V : Type u} [Fintype V] [DecidableEq V]
+    {G : SimpleGraph V} [DecidableRel G.Adj] (B : WholeBowtie G) : Finset (Fin 5) :=
   Finset.univ.filter (fun i => i ≠ 0 ∧ (B.row i).Nonempty)
+attribute [-instance] activePrivate._proof_1
 /-- Number of active private vertices, not number of external edges. -/
-def activity : ℕ := #B.activePrivate
+def activity {V : Type u} [Fintype V] [DecidableEq V]
+    {G : SimpleGraph V} [DecidableRel G.Adj] (B : WholeBowtie G) : ℕ := #B.activePrivate
 /-- Anchors having odd total incidence with the five bowtie vertices. -/
-def syndrome : Finset V := B.row 0 ∆ (B.row 1 ∆ (B.row 2 ∆ (B.row 3 ∆ B.row 4)))
+theorem syndrome._proof_1 : @NeZero Nat (@Zero.ofOfNat0 Nat (instOfNatNat (nat_lit 0))) (4 + 1) :=
+  Nat.instNeZeroSucc
+attribute [local instance] syndrome._proof_1
+def syndrome {V : Type u} [DecidableEq V] [Fintype V]
+    {G : SimpleGraph V} [DecidableRel G.Adj] (B : WholeBowtie G) : Finset V :=
+  B.row 0 ∆ (B.row 1 ∆ (B.row 2 ∆ (B.row 3 ∆ B.row 4)))
+attribute [-instance] syndrome._proof_1
 end WholeBowtie
 
 namespace TwoBowtie
-variable {G} [DecidableEq V]
+variable {V : Type*} [Fintype V] [DecidableEq V]
+variable {G : SimpleGraph V} [DecidableRel G.Adj]
 /-- Two disjoint whole bowties and subcubic residual even vertices. -/
 def Kernel (X Y : WholeBowtie G) : Prop :=
   Disjoint X.vertices Y.vertices ∧

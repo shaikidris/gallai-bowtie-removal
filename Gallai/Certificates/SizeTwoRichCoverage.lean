@@ -19,243 +19,1414 @@ set_option maxRecDepth 100000
 set_option maxHeartbeats 0
 
 /-- Every full-anchor high-activity representative has all four rich interfaces. -/
+private theorem high_representative_covered_row_000
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (0 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (0 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 0)) h)
+
+private theorem high_representative_covered_row_001
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (1 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (1 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 1)) h)
+
+private theorem high_representative_covered_row_002
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (2 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (2 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 2)) h)
+
+private theorem high_representative_covered_row_003
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (3 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (3 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 3)) h)
+
+private theorem high_representative_covered_row_004
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (4 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (4 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 4)) h)
+
+private theorem high_representative_covered_row_005
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (5 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (5 : Fin 234) := by
+  exact ⟨0,0,rfl⟩
+
+private theorem high_representative_covered_row_006
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (6 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (6 : Fin 234) := by
+  exact ⟨0,1,rfl⟩
+
+private theorem high_representative_covered_row_007
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (7 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (7 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 7)) h)
+
+private theorem high_representative_covered_row_008
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (8 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (8 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 8)) h)
+
+private theorem high_representative_covered_row_009
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (9 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (9 : Fin 234) := by
+  exact ⟨0,2,rfl⟩
+
+private theorem high_representative_covered_row_010
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (10 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (10 : Fin 234) := by
+  exact ⟨0,3,rfl⟩
+
+private theorem high_representative_covered_row_011
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (11 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (11 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 11)) h)
+
+private theorem high_representative_covered_row_012
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (12 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (12 : Fin 234) := by
+  exact ⟨0,4,rfl⟩
+
+private theorem high_representative_covered_row_013
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (13 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (13 : Fin 234) := by
+  exact ⟨0,5,rfl⟩
+
+private theorem high_representative_covered_row_014
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (14 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (14 : Fin 234) := by
+  exact ⟨0,6,rfl⟩
+
+private theorem high_representative_covered_row_015
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (15 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (15 : Fin 234) := by
+  exact ⟨0,7,rfl⟩
+
+private theorem high_representative_covered_row_016
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (16 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (16 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 16)) h)
+
+private theorem high_representative_covered_row_017
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (17 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (17 : Fin 234) := by
+  exact ⟨0,8,rfl⟩
+
+private theorem high_representative_covered_row_018
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (18 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (18 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 18)) h)
+
+private theorem high_representative_covered_row_019
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (19 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (19 : Fin 234) := by
+  exact ⟨0,9,rfl⟩
+
+private theorem high_representative_covered_row_020
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (20 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (20 : Fin 234) := by
+  exact ⟨0,10,rfl⟩
+
+private theorem high_representative_covered_row_021
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (21 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (21 : Fin 234) := by
+  exact ⟨0,11,rfl⟩
+
+private theorem high_representative_covered_row_022
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (22 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (22 : Fin 234) := by
+  exact ⟨0,12,rfl⟩
+
+private theorem high_representative_covered_row_023
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (23 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (23 : Fin 234) := by
+  exact ⟨0,13,rfl⟩
+
+private theorem high_representative_covered_row_024
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (24 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (24 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 24)) h)
+
+private theorem high_representative_covered_row_025
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (25 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (25 : Fin 234) := by
+  exact ⟨0,14,rfl⟩
+
+private theorem high_representative_covered_row_026
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (26 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (26 : Fin 234) := by
+  exact ⟨1,0,rfl⟩
+
+private theorem high_representative_covered_row_027
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (27 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (27 : Fin 234) := by
+  exact ⟨1,1,rfl⟩
+
+private theorem high_representative_covered_row_028
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (28 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (28 : Fin 234) := by
+  exact ⟨1,2,rfl⟩
+
+private theorem high_representative_covered_row_029
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (29 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (29 : Fin 234) := by
+  exact ⟨1,3,rfl⟩
+
+private theorem high_representative_covered_row_030
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (30 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (30 : Fin 234) := by
+  exact ⟨1,4,rfl⟩
+
+private theorem high_representative_covered_row_031
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (31 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (31 : Fin 234) := by
+  exact ⟨1,5,rfl⟩
+
+private theorem high_representative_covered_row_032
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (32 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (32 : Fin 234) := by
+  exact ⟨1,6,rfl⟩
+
+private theorem high_representative_covered_row_033
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (33 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (33 : Fin 234) := by
+  exact ⟨1,7,rfl⟩
+
+private theorem high_representative_covered_row_034
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (34 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (34 : Fin 234) := by
+  exact ⟨1,8,rfl⟩
+
+private theorem high_representative_covered_row_035
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (35 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (35 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 35)) h)
+
+private theorem high_representative_covered_row_036
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (36 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (36 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 36)) h)
+
+private theorem high_representative_covered_row_037
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (37 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (37 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 37)) h)
+
+private theorem high_representative_covered_row_038
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (38 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (38 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 38)) h)
+
+private theorem high_representative_covered_row_039
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (39 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (39 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 39)) h)
+
+private theorem high_representative_covered_row_040
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (40 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (40 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 40)) h)
+
+private theorem high_representative_covered_row_041
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (41 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (41 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 41)) h)
+
+private theorem high_representative_covered_row_042
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (42 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (42 : Fin 234) := by
+  exact ⟨1,9,rfl⟩
+
+private theorem high_representative_covered_row_043
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (43 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (43 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 43)) h)
+
+private theorem high_representative_covered_row_044
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (44 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (44 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 44)) h)
+
+private theorem high_representative_covered_row_045
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (45 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (45 : Fin 234) := by
+  exact ⟨1,10,rfl⟩
+
+private theorem high_representative_covered_row_046
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (46 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (46 : Fin 234) := by
+  exact ⟨1,11,rfl⟩
+
+private theorem high_representative_covered_row_047
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (47 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (47 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 47)) h)
+
+private theorem high_representative_covered_row_048
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (48 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (48 : Fin 234) := by
+  exact ⟨1,12,rfl⟩
+
+private theorem high_representative_covered_row_049
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (49 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (49 : Fin 234) := by
+  exact ⟨1,13,rfl⟩
+
+private theorem high_representative_covered_row_050
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (50 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (50 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 50)) h)
+
+private theorem high_representative_covered_row_051
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (51 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (51 : Fin 234) := by
+  exact ⟨1,14,rfl⟩
+
+private theorem high_representative_covered_row_052
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (52 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (52 : Fin 234) := by
+  exact ⟨2,0,rfl⟩
+
+private theorem high_representative_covered_row_053
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (53 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (53 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 53)) h)
+
+private theorem high_representative_covered_row_054
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (54 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (54 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 54)) h)
+
+private theorem high_representative_covered_row_055
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (55 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (55 : Fin 234) := by
+  exact ⟨2,1,rfl⟩
+
+private theorem high_representative_covered_row_056
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (56 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (56 : Fin 234) := by
+  exact ⟨2,2,rfl⟩
+
+private theorem high_representative_covered_row_057
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (57 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (57 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 57)) h)
+
+private theorem high_representative_covered_row_058
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (58 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (58 : Fin 234) := by
+  exact ⟨2,3,rfl⟩
+
+private theorem high_representative_covered_row_059
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (59 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (59 : Fin 234) := by
+  exact ⟨2,4,rfl⟩
+
+private theorem high_representative_covered_row_060
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (60 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (60 : Fin 234) := by
+  exact ⟨2,5,rfl⟩
+
+private theorem high_representative_covered_row_061
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (61 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (61 : Fin 234) := by
+  exact ⟨2,6,rfl⟩
+
+private theorem high_representative_covered_row_062
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (62 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (62 : Fin 234) := by
+  exact ⟨2,7,rfl⟩
+
+private theorem high_representative_covered_row_063
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (63 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (63 : Fin 234) := by
+  exact ⟨2,8,rfl⟩
+
+private theorem high_representative_covered_row_064
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (64 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (64 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 64)) h)
+
+private theorem high_representative_covered_row_065
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (65 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (65 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 65)) h)
+
+private theorem high_representative_covered_row_066
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (66 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (66 : Fin 234) := by
+  exact ⟨2,9,rfl⟩
+
+private theorem high_representative_covered_row_067
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (67 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (67 : Fin 234) := by
+  exact ⟨2,10,rfl⟩
+
+private theorem high_representative_covered_row_068
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (68 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (68 : Fin 234) := by
+  exact ⟨2,11,rfl⟩
+
+private theorem high_representative_covered_row_069
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (69 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (69 : Fin 234) := by
+  exact ⟨2,12,rfl⟩
+
+private theorem high_representative_covered_row_070
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (70 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (70 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 70)) h)
+
+private theorem high_representative_covered_row_071
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (71 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (71 : Fin 234) := by
+  exact ⟨2,13,rfl⟩
+
+private theorem high_representative_covered_row_072
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (72 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (72 : Fin 234) := by
+  exact ⟨2,14,rfl⟩
+
+private theorem high_representative_covered_row_073
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (73 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (73 : Fin 234) := by
+  exact ⟨3,0,rfl⟩
+
+private theorem high_representative_covered_row_074
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (74 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (74 : Fin 234) := by
+  exact ⟨3,1,rfl⟩
+
+private theorem high_representative_covered_row_075
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (75 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (75 : Fin 234) := by
+  exact ⟨3,2,rfl⟩
+
+private theorem high_representative_covered_row_076
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (76 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (76 : Fin 234) := by
+  exact ⟨3,3,rfl⟩
+
+private theorem high_representative_covered_row_077
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (77 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (77 : Fin 234) := by
+  exact ⟨3,4,rfl⟩
+
+private theorem high_representative_covered_row_078
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (78 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (78 : Fin 234) := by
+  exact ⟨3,5,rfl⟩
+
+private theorem high_representative_covered_row_079
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (79 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (79 : Fin 234) := by
+  exact ⟨3,6,rfl⟩
+
+private theorem high_representative_covered_row_080
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (80 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (80 : Fin 234) := by
+  exact ⟨3,7,rfl⟩
+
+private theorem high_representative_covered_row_081
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (81 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (81 : Fin 234) := by
+  exact ⟨3,8,rfl⟩
+
+private theorem high_representative_covered_row_082
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (82 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (82 : Fin 234) := by
+  exact ⟨3,9,rfl⟩
+
+private theorem high_representative_covered_row_083
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (83 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (83 : Fin 234) := by
+  exact ⟨3,10,rfl⟩
+
+private theorem high_representative_covered_row_084
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (84 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (84 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 84)) h)
+
+private theorem high_representative_covered_row_085
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (85 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (85 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 85)) h)
+
+private theorem high_representative_covered_row_086
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (86 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (86 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 86)) h)
+
+private theorem high_representative_covered_row_087
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (87 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (87 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 87)) h)
+
+private theorem high_representative_covered_row_088
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (88 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (88 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 88)) h)
+
+private theorem high_representative_covered_row_089
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (89 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (89 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 89)) h)
+
+private theorem high_representative_covered_row_090
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (90 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (90 : Fin 234) := by
+  exact ⟨3,11,rfl⟩
+
+private theorem high_representative_covered_row_091
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (91 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (91 : Fin 234) := by
+  exact ⟨3,12,rfl⟩
+
+private theorem high_representative_covered_row_092
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (92 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (92 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 92)) h)
+
+private theorem high_representative_covered_row_093
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (93 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (93 : Fin 234) := by
+  exact ⟨3,13,rfl⟩
+
+private theorem high_representative_covered_row_094
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (94 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (94 : Fin 234) := by
+  exact ⟨3,14,rfl⟩
+
+private theorem high_representative_covered_row_095
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (95 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (95 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 95)) h)
+
+private theorem high_representative_covered_row_096
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (96 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (96 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 96)) h)
+
+private theorem high_representative_covered_row_097
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (97 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (97 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 97)) h)
+
+private theorem high_representative_covered_row_098
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (98 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (98 : Fin 234) := by
+  exact ⟨4,0,rfl⟩
+
+private theorem high_representative_covered_row_099
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (99 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (99 : Fin 234) := by
+  exact ⟨4,1,rfl⟩
+
+private theorem high_representative_covered_row_100
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (100 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (100 : Fin 234) := by
+  exact ⟨4,2,rfl⟩
+
+private theorem high_representative_covered_row_101
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (101 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (101 : Fin 234) := by
+  exact ⟨4,3,rfl⟩
+
+private theorem high_representative_covered_row_102
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (102 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (102 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 102)) h)
+
+private theorem high_representative_covered_row_103
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (103 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (103 : Fin 234) := by
+  exact ⟨4,4,rfl⟩
+
+private theorem high_representative_covered_row_104
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (104 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (104 : Fin 234) := by
+  exact ⟨4,5,rfl⟩
+
+private theorem high_representative_covered_row_105
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (105 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (105 : Fin 234) := by
+  exact ⟨4,6,rfl⟩
+
+private theorem high_representative_covered_row_106
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (106 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (106 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 106)) h)
+
+private theorem high_representative_covered_row_107
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (107 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (107 : Fin 234) := by
+  exact ⟨4,7,rfl⟩
+
+private theorem high_representative_covered_row_108
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (108 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (108 : Fin 234) := by
+  exact ⟨4,8,rfl⟩
+
+private theorem high_representative_covered_row_109
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (109 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (109 : Fin 234) := by
+  exact ⟨4,9,rfl⟩
+
+private theorem high_representative_covered_row_110
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (110 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (110 : Fin 234) := by
+  exact ⟨4,10,rfl⟩
+
+private theorem high_representative_covered_row_111
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (111 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (111 : Fin 234) := by
+  exact ⟨4,11,rfl⟩
+
+private theorem high_representative_covered_row_112
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (112 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (112 : Fin 234) := by
+  exact ⟨4,12,rfl⟩
+
+private theorem high_representative_covered_row_113
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (113 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (113 : Fin 234) := by
+  exact ⟨4,13,rfl⟩
+
+private theorem high_representative_covered_row_114
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (114 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (114 : Fin 234) := by
+  exact ⟨4,14,rfl⟩
+
+private theorem high_representative_covered_row_115
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (115 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (115 : Fin 234) := by
+  exact ⟨5,0,rfl⟩
+
+private theorem high_representative_covered_row_116
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (116 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (116 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 116)) h)
+
+private theorem high_representative_covered_row_117
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (117 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (117 : Fin 234) := by
+  exact ⟨5,1,rfl⟩
+
+private theorem high_representative_covered_row_118
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (118 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (118 : Fin 234) := by
+  exact ⟨5,2,rfl⟩
+
+private theorem high_representative_covered_row_119
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (119 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (119 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 119)) h)
+
+private theorem high_representative_covered_row_120
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (120 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (120 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 120)) h)
+
+private theorem high_representative_covered_row_121
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (121 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (121 : Fin 234) := by
+  exact ⟨5,3,rfl⟩
+
+private theorem high_representative_covered_row_122
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (122 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (122 : Fin 234) := by
+  exact ⟨5,4,rfl⟩
+
+private theorem high_representative_covered_row_123
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (123 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (123 : Fin 234) := by
+  exact ⟨5,5,rfl⟩
+
+private theorem high_representative_covered_row_124
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (124 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (124 : Fin 234) := by
+  exact ⟨5,6,rfl⟩
+
+private theorem high_representative_covered_row_125
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (125 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (125 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 125)) h)
+
+private theorem high_representative_covered_row_126
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (126 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (126 : Fin 234) := by
+  exact ⟨5,7,rfl⟩
+
+private theorem high_representative_covered_row_127
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (127 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (127 : Fin 234) := by
+  exact ⟨5,8,rfl⟩
+
+private theorem high_representative_covered_row_128
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (128 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (128 : Fin 234) := by
+  exact ⟨5,9,rfl⟩
+
+private theorem high_representative_covered_row_129
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (129 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (129 : Fin 234) := by
+  exact ⟨5,10,rfl⟩
+
+private theorem high_representative_covered_row_130
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (130 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (130 : Fin 234) := by
+  exact ⟨5,11,rfl⟩
+
+private theorem high_representative_covered_row_131
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (131 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (131 : Fin 234) := by
+  exact ⟨5,12,rfl⟩
+
+private theorem high_representative_covered_row_132
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (132 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (132 : Fin 234) := by
+  exact ⟨5,13,rfl⟩
+
+private theorem high_representative_covered_row_133
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (133 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (133 : Fin 234) := by
+  exact ⟨5,14,rfl⟩
+
+private theorem high_representative_covered_row_134
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (134 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (134 : Fin 234) := by
+  exact ⟨6,0,rfl⟩
+
+private theorem high_representative_covered_row_135
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (135 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (135 : Fin 234) := by
+  exact ⟨6,1,rfl⟩
+
+private theorem high_representative_covered_row_136
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (136 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (136 : Fin 234) := by
+  exact ⟨6,2,rfl⟩
+
+private theorem high_representative_covered_row_137
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (137 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (137 : Fin 234) := by
+  exact ⟨6,3,rfl⟩
+
+private theorem high_representative_covered_row_138
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (138 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (138 : Fin 234) := by
+  exact ⟨6,4,rfl⟩
+
+private theorem high_representative_covered_row_139
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (139 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (139 : Fin 234) := by
+  exact ⟨6,5,rfl⟩
+
+private theorem high_representative_covered_row_140
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (140 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (140 : Fin 234) := by
+  exact ⟨6,6,rfl⟩
+
+private theorem high_representative_covered_row_141
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (141 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (141 : Fin 234) := by
+  exact ⟨6,7,rfl⟩
+
+private theorem high_representative_covered_row_142
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (142 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (142 : Fin 234) := by
+  exact ⟨6,8,rfl⟩
+
+private theorem high_representative_covered_row_143
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (143 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (143 : Fin 234) := by
+  exact ⟨6,9,rfl⟩
+
+private theorem high_representative_covered_row_144
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (144 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (144 : Fin 234) := by
+  exact ⟨6,10,rfl⟩
+
+private theorem high_representative_covered_row_145
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (145 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (145 : Fin 234) := by
+  exact ⟨6,11,rfl⟩
+
+private theorem high_representative_covered_row_146
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (146 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (146 : Fin 234) := by
+  exact ⟨6,12,rfl⟩
+
+private theorem high_representative_covered_row_147
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (147 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (147 : Fin 234) := by
+  exact ⟨6,13,rfl⟩
+
+private theorem high_representative_covered_row_148
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (148 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (148 : Fin 234) := by
+  exact ⟨6,14,rfl⟩
+
+private theorem high_representative_covered_row_149
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (149 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (149 : Fin 234) := by
+  exact ⟨7,0,rfl⟩
+
+private theorem high_representative_covered_row_150
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (150 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (150 : Fin 234) := by
+  exact ⟨7,1,rfl⟩
+
+private theorem high_representative_covered_row_151
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (151 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (151 : Fin 234) := by
+  exact ⟨7,2,rfl⟩
+
+private theorem high_representative_covered_row_152
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (152 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (152 : Fin 234) := by
+  exact ⟨7,3,rfl⟩
+
+private theorem high_representative_covered_row_153
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (153 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (153 : Fin 234) := by
+  exact ⟨7,4,rfl⟩
+
+private theorem high_representative_covered_row_154
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (154 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (154 : Fin 234) := by
+  exact ⟨7,5,rfl⟩
+
+private theorem high_representative_covered_row_155
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (155 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (155 : Fin 234) := by
+  exact ⟨7,6,rfl⟩
+
+private theorem high_representative_covered_row_156
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (156 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (156 : Fin 234) := by
+  exact ⟨7,7,rfl⟩
+
+private theorem high_representative_covered_row_157
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (157 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (157 : Fin 234) := by
+  exact ⟨7,8,rfl⟩
+
+private theorem high_representative_covered_row_158
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (158 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (158 : Fin 234) := by
+  exact ⟨7,9,rfl⟩
+
+private theorem high_representative_covered_row_159
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (159 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (159 : Fin 234) := by
+  exact ⟨7,10,rfl⟩
+
+private theorem high_representative_covered_row_160
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (160 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (160 : Fin 234) := by
+  exact ⟨7,11,rfl⟩
+
+private theorem high_representative_covered_row_161
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (161 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (161 : Fin 234) := by
+  exact ⟨7,12,rfl⟩
+
+private theorem high_representative_covered_row_162
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (162 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (162 : Fin 234) := by
+  exact ⟨7,13,rfl⟩
+
+private theorem high_representative_covered_row_163
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (163 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (163 : Fin 234) := by
+  exact ⟨7,14,rfl⟩
+
+private theorem high_representative_covered_row_164
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (164 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (164 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 164)) h)
+
+private theorem high_representative_covered_row_165
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (165 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (165 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 165)) h)
+
+private theorem high_representative_covered_row_166
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (166 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (166 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 166)) h)
+
+private theorem high_representative_covered_row_167
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (167 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (167 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 167)) h)
+
+private theorem high_representative_covered_row_168
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (168 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (168 : Fin 234) := by
+  exact ⟨8,0,rfl⟩
+
+private theorem high_representative_covered_row_169
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (169 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (169 : Fin 234) := by
+  exact ⟨8,1,rfl⟩
+
+private theorem high_representative_covered_row_170
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (170 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (170 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 170)) h)
+
+private theorem high_representative_covered_row_171
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (171 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (171 : Fin 234) := by
+  exact ⟨8,2,rfl⟩
+
+private theorem high_representative_covered_row_172
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (172 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (172 : Fin 234) := by
+  exact ⟨8,3,rfl⟩
+
+private theorem high_representative_covered_row_173
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (173 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (173 : Fin 234) := by
+  exact ⟨8,4,rfl⟩
+
+private theorem high_representative_covered_row_174
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (174 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (174 : Fin 234) := by
+  exact ⟨8,5,rfl⟩
+
+private theorem high_representative_covered_row_175
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (175 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (175 : Fin 234) := by
+  exact ⟨8,6,rfl⟩
+
+private theorem high_representative_covered_row_176
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (176 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (176 : Fin 234) := by
+  exact ⟨8,7,rfl⟩
+
+private theorem high_representative_covered_row_177
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (177 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (177 : Fin 234) := by
+  exact ⟨8,8,rfl⟩
+
+private theorem high_representative_covered_row_178
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (178 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (178 : Fin 234) := by
+  exact ⟨8,9,rfl⟩
+
+private theorem high_representative_covered_row_179
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (179 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (179 : Fin 234) := by
+  exact ⟨8,10,rfl⟩
+
+private theorem high_representative_covered_row_180
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (180 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (180 : Fin 234) := by
+  exact ⟨8,11,rfl⟩
+
+private theorem high_representative_covered_row_181
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (181 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (181 : Fin 234) := by
+  exact ⟨8,12,rfl⟩
+
+private theorem high_representative_covered_row_182
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (182 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (182 : Fin 234) := by
+  exact ⟨8,13,rfl⟩
+
+private theorem high_representative_covered_row_183
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (183 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (183 : Fin 234) := by
+  exact ⟨8,14,rfl⟩
+
+private theorem high_representative_covered_row_184
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (184 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (184 : Fin 234) := by
+  exact ⟨9,0,rfl⟩
+
+private theorem high_representative_covered_row_185
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (185 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (185 : Fin 234) := by
+  exact ⟨9,1,rfl⟩
+
+private theorem high_representative_covered_row_186
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (186 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (186 : Fin 234) := by
+  exact ⟨9,2,rfl⟩
+
+private theorem high_representative_covered_row_187
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (187 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (187 : Fin 234) := by
+  exact ⟨9,3,rfl⟩
+
+private theorem high_representative_covered_row_188
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (188 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (188 : Fin 234) := by
+  exact ⟨9,4,rfl⟩
+
+private theorem high_representative_covered_row_189
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (189 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (189 : Fin 234) := by
+  exact ⟨9,5,rfl⟩
+
+private theorem high_representative_covered_row_190
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (190 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (190 : Fin 234) := by
+  exact ⟨9,6,rfl⟩
+
+private theorem high_representative_covered_row_191
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (191 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (191 : Fin 234) := by
+  exact ⟨9,7,rfl⟩
+
+private theorem high_representative_covered_row_192
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (192 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (192 : Fin 234) := by
+  exact ⟨9,8,rfl⟩
+
+private theorem high_representative_covered_row_193
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (193 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (193 : Fin 234) := by
+  exact ⟨9,9,rfl⟩
+
+private theorem high_representative_covered_row_194
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (194 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (194 : Fin 234) := by
+  exact ⟨9,10,rfl⟩
+
+private theorem high_representative_covered_row_195
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (195 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (195 : Fin 234) := by
+  exact ⟨9,11,rfl⟩
+
+private theorem high_representative_covered_row_196
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (196 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (196 : Fin 234) := by
+  exact ⟨9,12,rfl⟩
+
+private theorem high_representative_covered_row_197
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (197 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (197 : Fin 234) := by
+  exact ⟨9,13,rfl⟩
+
+private theorem high_representative_covered_row_198
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (198 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (198 : Fin 234) := by
+  exact ⟨9,14,rfl⟩
+
+private theorem high_representative_covered_row_199
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (199 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (199 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 199)) h)
+
+private theorem high_representative_covered_row_200
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (200 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (200 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 200)) h)
+
+private theorem high_representative_covered_row_201
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (201 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (201 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 201)) h)
+
+private theorem high_representative_covered_row_202
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (202 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (202 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 202)) h)
+
+private theorem high_representative_covered_row_203
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (203 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (203 : Fin 234) := by
+  exact ⟨10,0,rfl⟩
+
+private theorem high_representative_covered_row_204
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (204 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (204 : Fin 234) := by
+  exact ⟨10,1,rfl⟩
+
+private theorem high_representative_covered_row_205
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (205 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (205 : Fin 234) := by
+  exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 205)) h)
+
+private theorem high_representative_covered_row_206
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (206 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (206 : Fin 234) := by
+  exact ⟨10,2,rfl⟩
+
+private theorem high_representative_covered_row_207
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (207 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (207 : Fin 234) := by
+  exact ⟨10,3,rfl⟩
+
+private theorem high_representative_covered_row_208
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (208 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (208 : Fin 234) := by
+  exact ⟨10,4,rfl⟩
+
+private theorem high_representative_covered_row_209
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (209 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (209 : Fin 234) := by
+  exact ⟨10,5,rfl⟩
+
+private theorem high_representative_covered_row_210
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (210 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (210 : Fin 234) := by
+  exact ⟨10,6,rfl⟩
+
+private theorem high_representative_covered_row_211
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (211 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (211 : Fin 234) := by
+  exact ⟨10,7,rfl⟩
+
+private theorem high_representative_covered_row_212
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (212 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (212 : Fin 234) := by
+  exact ⟨10,8,rfl⟩
+
+private theorem high_representative_covered_row_213
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (213 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (213 : Fin 234) := by
+  exact ⟨10,9,rfl⟩
+
+private theorem high_representative_covered_row_214
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (214 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (214 : Fin 234) := by
+  exact ⟨10,10,rfl⟩
+
+private theorem high_representative_covered_row_215
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (215 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (215 : Fin 234) := by
+  exact ⟨10,11,rfl⟩
+
+private theorem high_representative_covered_row_216
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (216 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (216 : Fin 234) := by
+  exact ⟨10,12,rfl⟩
+
+private theorem high_representative_covered_row_217
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (217 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (217 : Fin 234) := by
+  exact ⟨10,13,rfl⟩
+
+private theorem high_representative_covered_row_218
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (218 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (218 : Fin 234) := by
+  exact ⟨10,14,rfl⟩
+
+private theorem high_representative_covered_row_219
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (219 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (219 : Fin 234) := by
+  exact ⟨11,0,rfl⟩
+
+private theorem high_representative_covered_row_220
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (220 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (220 : Fin 234) := by
+  exact ⟨11,1,rfl⟩
+
+private theorem high_representative_covered_row_221
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (221 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (221 : Fin 234) := by
+  exact ⟨11,2,rfl⟩
+
+private theorem high_representative_covered_row_222
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (222 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (222 : Fin 234) := by
+  exact ⟨11,3,rfl⟩
+
+private theorem high_representative_covered_row_223
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (223 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (223 : Fin 234) := by
+  exact ⟨11,4,rfl⟩
+
+private theorem high_representative_covered_row_224
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (224 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (224 : Fin 234) := by
+  exact ⟨11,5,rfl⟩
+
+private theorem high_representative_covered_row_225
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (225 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (225 : Fin 234) := by
+  exact ⟨11,6,rfl⟩
+
+private theorem high_representative_covered_row_226
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (226 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (226 : Fin 234) := by
+  exact ⟨11,7,rfl⟩
+
+private theorem high_representative_covered_row_227
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (227 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (227 : Fin 234) := by
+  exact ⟨11,8,rfl⟩
+
+private theorem high_representative_covered_row_228
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (228 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (228 : Fin 234) := by
+  exact ⟨11,9,rfl⟩
+
+private theorem high_representative_covered_row_229
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (229 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (229 : Fin 234) := by
+  exact ⟨11,10,rfl⟩
+
+private theorem high_representative_covered_row_230
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (230 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (230 : Fin 234) := by
+  exact ⟨11,11,rfl⟩
+
+private theorem high_representative_covered_row_231
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (231 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (231 : Fin 234) := by
+  exact ⟨11,12,rfl⟩
+
+private theorem high_representative_covered_row_232
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (232 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (232 : Fin 234) := by
+  exact ⟨11,13,rfl⟩
+
+private theorem high_representative_covered_row_233
+    (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state (233 : Fin 234))) :
+    ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state (233 : Fin 234) := by
+  exact ⟨11,14,rfl⟩
+
 theorem high_representative_covered (o : Fin 234)
     (h : ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state o)) :
     ∃ b : Fin 12, ∃ k : Fin 15, state b k = SizeTwo.Catalogue.Rows.state o := by
   fin_cases o
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 0)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 1)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 2)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 3)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 4)) h)
-  · exact ⟨0,0,rfl⟩
-  · exact ⟨0,1,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 7)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 8)) h)
-  · exact ⟨0,2,rfl⟩
-  · exact ⟨0,3,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 11)) h)
-  · exact ⟨0,4,rfl⟩
-  · exact ⟨0,5,rfl⟩
-  · exact ⟨0,6,rfl⟩
-  · exact ⟨0,7,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 16)) h)
-  · exact ⟨0,8,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 18)) h)
-  · exact ⟨0,9,rfl⟩
-  · exact ⟨0,10,rfl⟩
-  · exact ⟨0,11,rfl⟩
-  · exact ⟨0,12,rfl⟩
-  · exact ⟨0,13,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 24)) h)
-  · exact ⟨0,14,rfl⟩
-  · exact ⟨1,0,rfl⟩
-  · exact ⟨1,1,rfl⟩
-  · exact ⟨1,2,rfl⟩
-  · exact ⟨1,3,rfl⟩
-  · exact ⟨1,4,rfl⟩
-  · exact ⟨1,5,rfl⟩
-  · exact ⟨1,6,rfl⟩
-  · exact ⟨1,7,rfl⟩
-  · exact ⟨1,8,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 35)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 36)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 37)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 38)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 39)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 40)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 41)) h)
-  · exact ⟨1,9,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 43)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 44)) h)
-  · exact ⟨1,10,rfl⟩
-  · exact ⟨1,11,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 47)) h)
-  · exact ⟨1,12,rfl⟩
-  · exact ⟨1,13,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 50)) h)
-  · exact ⟨1,14,rfl⟩
-  · exact ⟨2,0,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 53)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 54)) h)
-  · exact ⟨2,1,rfl⟩
-  · exact ⟨2,2,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 57)) h)
-  · exact ⟨2,3,rfl⟩
-  · exact ⟨2,4,rfl⟩
-  · exact ⟨2,5,rfl⟩
-  · exact ⟨2,6,rfl⟩
-  · exact ⟨2,7,rfl⟩
-  · exact ⟨2,8,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 64)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 65)) h)
-  · exact ⟨2,9,rfl⟩
-  · exact ⟨2,10,rfl⟩
-  · exact ⟨2,11,rfl⟩
-  · exact ⟨2,12,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 70)) h)
-  · exact ⟨2,13,rfl⟩
-  · exact ⟨2,14,rfl⟩
-  · exact ⟨3,0,rfl⟩
-  · exact ⟨3,1,rfl⟩
-  · exact ⟨3,2,rfl⟩
-  · exact ⟨3,3,rfl⟩
-  · exact ⟨3,4,rfl⟩
-  · exact ⟨3,5,rfl⟩
-  · exact ⟨3,6,rfl⟩
-  · exact ⟨3,7,rfl⟩
-  · exact ⟨3,8,rfl⟩
-  · exact ⟨3,9,rfl⟩
-  · exact ⟨3,10,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 84)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 85)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 86)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 87)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 88)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 89)) h)
-  · exact ⟨3,11,rfl⟩
-  · exact ⟨3,12,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 92)) h)
-  · exact ⟨3,13,rfl⟩
-  · exact ⟨3,14,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 95)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 96)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 97)) h)
-  · exact ⟨4,0,rfl⟩
-  · exact ⟨4,1,rfl⟩
-  · exact ⟨4,2,rfl⟩
-  · exact ⟨4,3,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 102)) h)
-  · exact ⟨4,4,rfl⟩
-  · exact ⟨4,5,rfl⟩
-  · exact ⟨4,6,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 106)) h)
-  · exact ⟨4,7,rfl⟩
-  · exact ⟨4,8,rfl⟩
-  · exact ⟨4,9,rfl⟩
-  · exact ⟨4,10,rfl⟩
-  · exact ⟨4,11,rfl⟩
-  · exact ⟨4,12,rfl⟩
-  · exact ⟨4,13,rfl⟩
-  · exact ⟨4,14,rfl⟩
-  · exact ⟨5,0,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 116)) h)
-  · exact ⟨5,1,rfl⟩
-  · exact ⟨5,2,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 119)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 120)) h)
-  · exact ⟨5,3,rfl⟩
-  · exact ⟨5,4,rfl⟩
-  · exact ⟨5,5,rfl⟩
-  · exact ⟨5,6,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 125)) h)
-  · exact ⟨5,7,rfl⟩
-  · exact ⟨5,8,rfl⟩
-  · exact ⟨5,9,rfl⟩
-  · exact ⟨5,10,rfl⟩
-  · exact ⟨5,11,rfl⟩
-  · exact ⟨5,12,rfl⟩
-  · exact ⟨5,13,rfl⟩
-  · exact ⟨5,14,rfl⟩
-  · exact ⟨6,0,rfl⟩
-  · exact ⟨6,1,rfl⟩
-  · exact ⟨6,2,rfl⟩
-  · exact ⟨6,3,rfl⟩
-  · exact ⟨6,4,rfl⟩
-  · exact ⟨6,5,rfl⟩
-  · exact ⟨6,6,rfl⟩
-  · exact ⟨6,7,rfl⟩
-  · exact ⟨6,8,rfl⟩
-  · exact ⟨6,9,rfl⟩
-  · exact ⟨6,10,rfl⟩
-  · exact ⟨6,11,rfl⟩
-  · exact ⟨6,12,rfl⟩
-  · exact ⟨6,13,rfl⟩
-  · exact ⟨6,14,rfl⟩
-  · exact ⟨7,0,rfl⟩
-  · exact ⟨7,1,rfl⟩
-  · exact ⟨7,2,rfl⟩
-  · exact ⟨7,3,rfl⟩
-  · exact ⟨7,4,rfl⟩
-  · exact ⟨7,5,rfl⟩
-  · exact ⟨7,6,rfl⟩
-  · exact ⟨7,7,rfl⟩
-  · exact ⟨7,8,rfl⟩
-  · exact ⟨7,9,rfl⟩
-  · exact ⟨7,10,rfl⟩
-  · exact ⟨7,11,rfl⟩
-  · exact ⟨7,12,rfl⟩
-  · exact ⟨7,13,rfl⟩
-  · exact ⟨7,14,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 164)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 165)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 166)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 167)) h)
-  · exact ⟨8,0,rfl⟩
-  · exact ⟨8,1,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 170)) h)
-  · exact ⟨8,2,rfl⟩
-  · exact ⟨8,3,rfl⟩
-  · exact ⟨8,4,rfl⟩
-  · exact ⟨8,5,rfl⟩
-  · exact ⟨8,6,rfl⟩
-  · exact ⟨8,7,rfl⟩
-  · exact ⟨8,8,rfl⟩
-  · exact ⟨8,9,rfl⟩
-  · exact ⟨8,10,rfl⟩
-  · exact ⟨8,11,rfl⟩
-  · exact ⟨8,12,rfl⟩
-  · exact ⟨8,13,rfl⟩
-  · exact ⟨8,14,rfl⟩
-  · exact ⟨9,0,rfl⟩
-  · exact ⟨9,1,rfl⟩
-  · exact ⟨9,2,rfl⟩
-  · exact ⟨9,3,rfl⟩
-  · exact ⟨9,4,rfl⟩
-  · exact ⟨9,5,rfl⟩
-  · exact ⟨9,6,rfl⟩
-  · exact ⟨9,7,rfl⟩
-  · exact ⟨9,8,rfl⟩
-  · exact ⟨9,9,rfl⟩
-  · exact ⟨9,10,rfl⟩
-  · exact ⟨9,11,rfl⟩
-  · exact ⟨9,12,rfl⟩
-  · exact ⟨9,13,rfl⟩
-  · exact ⟨9,14,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 199)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 200)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 201)) h)
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 202)) h)
-  · exact ⟨10,0,rfl⟩
-  · exact ⟨10,1,rfl⟩
-  · exact False.elim ((by decide : ¬ ZeroSyndrome.HighBoundary (SizeTwo.Catalogue.Rows.state 205)) h)
-  · exact ⟨10,2,rfl⟩
-  · exact ⟨10,3,rfl⟩
-  · exact ⟨10,4,rfl⟩
-  · exact ⟨10,5,rfl⟩
-  · exact ⟨10,6,rfl⟩
-  · exact ⟨10,7,rfl⟩
-  · exact ⟨10,8,rfl⟩
-  · exact ⟨10,9,rfl⟩
-  · exact ⟨10,10,rfl⟩
-  · exact ⟨10,11,rfl⟩
-  · exact ⟨10,12,rfl⟩
-  · exact ⟨10,13,rfl⟩
-  · exact ⟨10,14,rfl⟩
-  · exact ⟨11,0,rfl⟩
-  · exact ⟨11,1,rfl⟩
-  · exact ⟨11,2,rfl⟩
-  · exact ⟨11,3,rfl⟩
-  · exact ⟨11,4,rfl⟩
-  · exact ⟨11,5,rfl⟩
-  · exact ⟨11,6,rfl⟩
-  · exact ⟨11,7,rfl⟩
-  · exact ⟨11,8,rfl⟩
-  · exact ⟨11,9,rfl⟩
-  · exact ⟨11,10,rfl⟩
-  · exact ⟨11,11,rfl⟩
-  · exact ⟨11,12,rfl⟩
-  · exact ⟨11,13,rfl⟩
-  · exact ⟨11,14,rfl⟩
+  · exact high_representative_covered_row_000 h
+  · exact high_representative_covered_row_001 h
+  · exact high_representative_covered_row_002 h
+  · exact high_representative_covered_row_003 h
+  · exact high_representative_covered_row_004 h
+  · exact high_representative_covered_row_005 h
+  · exact high_representative_covered_row_006 h
+  · exact high_representative_covered_row_007 h
+  · exact high_representative_covered_row_008 h
+  · exact high_representative_covered_row_009 h
+  · exact high_representative_covered_row_010 h
+  · exact high_representative_covered_row_011 h
+  · exact high_representative_covered_row_012 h
+  · exact high_representative_covered_row_013 h
+  · exact high_representative_covered_row_014 h
+  · exact high_representative_covered_row_015 h
+  · exact high_representative_covered_row_016 h
+  · exact high_representative_covered_row_017 h
+  · exact high_representative_covered_row_018 h
+  · exact high_representative_covered_row_019 h
+  · exact high_representative_covered_row_020 h
+  · exact high_representative_covered_row_021 h
+  · exact high_representative_covered_row_022 h
+  · exact high_representative_covered_row_023 h
+  · exact high_representative_covered_row_024 h
+  · exact high_representative_covered_row_025 h
+  · exact high_representative_covered_row_026 h
+  · exact high_representative_covered_row_027 h
+  · exact high_representative_covered_row_028 h
+  · exact high_representative_covered_row_029 h
+  · exact high_representative_covered_row_030 h
+  · exact high_representative_covered_row_031 h
+  · exact high_representative_covered_row_032 h
+  · exact high_representative_covered_row_033 h
+  · exact high_representative_covered_row_034 h
+  · exact high_representative_covered_row_035 h
+  · exact high_representative_covered_row_036 h
+  · exact high_representative_covered_row_037 h
+  · exact high_representative_covered_row_038 h
+  · exact high_representative_covered_row_039 h
+  · exact high_representative_covered_row_040 h
+  · exact high_representative_covered_row_041 h
+  · exact high_representative_covered_row_042 h
+  · exact high_representative_covered_row_043 h
+  · exact high_representative_covered_row_044 h
+  · exact high_representative_covered_row_045 h
+  · exact high_representative_covered_row_046 h
+  · exact high_representative_covered_row_047 h
+  · exact high_representative_covered_row_048 h
+  · exact high_representative_covered_row_049 h
+  · exact high_representative_covered_row_050 h
+  · exact high_representative_covered_row_051 h
+  · exact high_representative_covered_row_052 h
+  · exact high_representative_covered_row_053 h
+  · exact high_representative_covered_row_054 h
+  · exact high_representative_covered_row_055 h
+  · exact high_representative_covered_row_056 h
+  · exact high_representative_covered_row_057 h
+  · exact high_representative_covered_row_058 h
+  · exact high_representative_covered_row_059 h
+  · exact high_representative_covered_row_060 h
+  · exact high_representative_covered_row_061 h
+  · exact high_representative_covered_row_062 h
+  · exact high_representative_covered_row_063 h
+  · exact high_representative_covered_row_064 h
+  · exact high_representative_covered_row_065 h
+  · exact high_representative_covered_row_066 h
+  · exact high_representative_covered_row_067 h
+  · exact high_representative_covered_row_068 h
+  · exact high_representative_covered_row_069 h
+  · exact high_representative_covered_row_070 h
+  · exact high_representative_covered_row_071 h
+  · exact high_representative_covered_row_072 h
+  · exact high_representative_covered_row_073 h
+  · exact high_representative_covered_row_074 h
+  · exact high_representative_covered_row_075 h
+  · exact high_representative_covered_row_076 h
+  · exact high_representative_covered_row_077 h
+  · exact high_representative_covered_row_078 h
+  · exact high_representative_covered_row_079 h
+  · exact high_representative_covered_row_080 h
+  · exact high_representative_covered_row_081 h
+  · exact high_representative_covered_row_082 h
+  · exact high_representative_covered_row_083 h
+  · exact high_representative_covered_row_084 h
+  · exact high_representative_covered_row_085 h
+  · exact high_representative_covered_row_086 h
+  · exact high_representative_covered_row_087 h
+  · exact high_representative_covered_row_088 h
+  · exact high_representative_covered_row_089 h
+  · exact high_representative_covered_row_090 h
+  · exact high_representative_covered_row_091 h
+  · exact high_representative_covered_row_092 h
+  · exact high_representative_covered_row_093 h
+  · exact high_representative_covered_row_094 h
+  · exact high_representative_covered_row_095 h
+  · exact high_representative_covered_row_096 h
+  · exact high_representative_covered_row_097 h
+  · exact high_representative_covered_row_098 h
+  · exact high_representative_covered_row_099 h
+  · exact high_representative_covered_row_100 h
+  · exact high_representative_covered_row_101 h
+  · exact high_representative_covered_row_102 h
+  · exact high_representative_covered_row_103 h
+  · exact high_representative_covered_row_104 h
+  · exact high_representative_covered_row_105 h
+  · exact high_representative_covered_row_106 h
+  · exact high_representative_covered_row_107 h
+  · exact high_representative_covered_row_108 h
+  · exact high_representative_covered_row_109 h
+  · exact high_representative_covered_row_110 h
+  · exact high_representative_covered_row_111 h
+  · exact high_representative_covered_row_112 h
+  · exact high_representative_covered_row_113 h
+  · exact high_representative_covered_row_114 h
+  · exact high_representative_covered_row_115 h
+  · exact high_representative_covered_row_116 h
+  · exact high_representative_covered_row_117 h
+  · exact high_representative_covered_row_118 h
+  · exact high_representative_covered_row_119 h
+  · exact high_representative_covered_row_120 h
+  · exact high_representative_covered_row_121 h
+  · exact high_representative_covered_row_122 h
+  · exact high_representative_covered_row_123 h
+  · exact high_representative_covered_row_124 h
+  · exact high_representative_covered_row_125 h
+  · exact high_representative_covered_row_126 h
+  · exact high_representative_covered_row_127 h
+  · exact high_representative_covered_row_128 h
+  · exact high_representative_covered_row_129 h
+  · exact high_representative_covered_row_130 h
+  · exact high_representative_covered_row_131 h
+  · exact high_representative_covered_row_132 h
+  · exact high_representative_covered_row_133 h
+  · exact high_representative_covered_row_134 h
+  · exact high_representative_covered_row_135 h
+  · exact high_representative_covered_row_136 h
+  · exact high_representative_covered_row_137 h
+  · exact high_representative_covered_row_138 h
+  · exact high_representative_covered_row_139 h
+  · exact high_representative_covered_row_140 h
+  · exact high_representative_covered_row_141 h
+  · exact high_representative_covered_row_142 h
+  · exact high_representative_covered_row_143 h
+  · exact high_representative_covered_row_144 h
+  · exact high_representative_covered_row_145 h
+  · exact high_representative_covered_row_146 h
+  · exact high_representative_covered_row_147 h
+  · exact high_representative_covered_row_148 h
+  · exact high_representative_covered_row_149 h
+  · exact high_representative_covered_row_150 h
+  · exact high_representative_covered_row_151 h
+  · exact high_representative_covered_row_152 h
+  · exact high_representative_covered_row_153 h
+  · exact high_representative_covered_row_154 h
+  · exact high_representative_covered_row_155 h
+  · exact high_representative_covered_row_156 h
+  · exact high_representative_covered_row_157 h
+  · exact high_representative_covered_row_158 h
+  · exact high_representative_covered_row_159 h
+  · exact high_representative_covered_row_160 h
+  · exact high_representative_covered_row_161 h
+  · exact high_representative_covered_row_162 h
+  · exact high_representative_covered_row_163 h
+  · exact high_representative_covered_row_164 h
+  · exact high_representative_covered_row_165 h
+  · exact high_representative_covered_row_166 h
+  · exact high_representative_covered_row_167 h
+  · exact high_representative_covered_row_168 h
+  · exact high_representative_covered_row_169 h
+  · exact high_representative_covered_row_170 h
+  · exact high_representative_covered_row_171 h
+  · exact high_representative_covered_row_172 h
+  · exact high_representative_covered_row_173 h
+  · exact high_representative_covered_row_174 h
+  · exact high_representative_covered_row_175 h
+  · exact high_representative_covered_row_176 h
+  · exact high_representative_covered_row_177 h
+  · exact high_representative_covered_row_178 h
+  · exact high_representative_covered_row_179 h
+  · exact high_representative_covered_row_180 h
+  · exact high_representative_covered_row_181 h
+  · exact high_representative_covered_row_182 h
+  · exact high_representative_covered_row_183 h
+  · exact high_representative_covered_row_184 h
+  · exact high_representative_covered_row_185 h
+  · exact high_representative_covered_row_186 h
+  · exact high_representative_covered_row_187 h
+  · exact high_representative_covered_row_188 h
+  · exact high_representative_covered_row_189 h
+  · exact high_representative_covered_row_190 h
+  · exact high_representative_covered_row_191 h
+  · exact high_representative_covered_row_192 h
+  · exact high_representative_covered_row_193 h
+  · exact high_representative_covered_row_194 h
+  · exact high_representative_covered_row_195 h
+  · exact high_representative_covered_row_196 h
+  · exact high_representative_covered_row_197 h
+  · exact high_representative_covered_row_198 h
+  · exact high_representative_covered_row_199 h
+  · exact high_representative_covered_row_200 h
+  · exact high_representative_covered_row_201 h
+  · exact high_representative_covered_row_202 h
+  · exact high_representative_covered_row_203 h
+  · exact high_representative_covered_row_204 h
+  · exact high_representative_covered_row_205 h
+  · exact high_representative_covered_row_206 h
+  · exact high_representative_covered_row_207 h
+  · exact high_representative_covered_row_208 h
+  · exact high_representative_covered_row_209 h
+  · exact high_representative_covered_row_210 h
+  · exact high_representative_covered_row_211 h
+  · exact high_representative_covered_row_212 h
+  · exact high_representative_covered_row_213 h
+  · exact high_representative_covered_row_214 h
+  · exact high_representative_covered_row_215 h
+  · exact high_representative_covered_row_216 h
+  · exact high_representative_covered_row_217 h
+  · exact high_representative_covered_row_218 h
+  · exact high_representative_covered_row_219 h
+  · exact high_representative_covered_row_220 h
+  · exact high_representative_covered_row_221 h
+  · exact high_representative_covered_row_222 h
+  · exact high_representative_covered_row_223 h
+  · exact high_representative_covered_row_224 h
+  · exact high_representative_covered_row_225 h
+  · exact high_representative_covered_row_226 h
+  · exact high_representative_covered_row_227 h
+  · exact high_representative_covered_row_228 h
+  · exact high_representative_covered_row_229 h
+  · exact high_representative_covered_row_230 h
+  · exact high_representative_covered_row_231 h
+  · exact high_representative_covered_row_232 h
+  · exact high_representative_covered_row_233 h
+
 
 end Gallai.Certificate.SizeTwo.Rich.Catalogue

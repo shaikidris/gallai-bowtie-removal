@@ -404,9 +404,100 @@ def added : Fin 15 → Fin 4 → List (List Star.Vertex) :=
     [[a, b, q, d, c, r, x, p], [p, d, r, b, x, c, s, a, q]]]]
 
 /-- Every record satisfies the contract for its actual reconstruction kind. -/
+private theorem accepted_row_000 (i : Fin 4) :
+    if special (0 : Fin 15) i then SeparatedAccepted (state (0 : Fin 15)) i (words (0 : Fin 15) i 0) (words (0 : Fin 15) i 1) (added (0 : Fin 15) i)
+    else AcceptedRecord (state (0 : Fin 15)) i (words (0 : Fin 15) i) (added (0 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_001 (i : Fin 4) :
+    if special (1 : Fin 15) i then SeparatedAccepted (state (1 : Fin 15)) i (words (1 : Fin 15) i 0) (words (1 : Fin 15) i 1) (added (1 : Fin 15) i)
+    else AcceptedRecord (state (1 : Fin 15)) i (words (1 : Fin 15) i) (added (1 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_002 (i : Fin 4) :
+    if special (2 : Fin 15) i then SeparatedAccepted (state (2 : Fin 15)) i (words (2 : Fin 15) i 0) (words (2 : Fin 15) i 1) (added (2 : Fin 15) i)
+    else AcceptedRecord (state (2 : Fin 15)) i (words (2 : Fin 15) i) (added (2 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_003 (i : Fin 4) :
+    if special (3 : Fin 15) i then SeparatedAccepted (state (3 : Fin 15)) i (words (3 : Fin 15) i 0) (words (3 : Fin 15) i 1) (added (3 : Fin 15) i)
+    else AcceptedRecord (state (3 : Fin 15)) i (words (3 : Fin 15) i) (added (3 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_004 (i : Fin 4) :
+    if special (4 : Fin 15) i then SeparatedAccepted (state (4 : Fin 15)) i (words (4 : Fin 15) i 0) (words (4 : Fin 15) i 1) (added (4 : Fin 15) i)
+    else AcceptedRecord (state (4 : Fin 15)) i (words (4 : Fin 15) i) (added (4 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_005 (i : Fin 4) :
+    if special (5 : Fin 15) i then SeparatedAccepted (state (5 : Fin 15)) i (words (5 : Fin 15) i 0) (words (5 : Fin 15) i 1) (added (5 : Fin 15) i)
+    else AcceptedRecord (state (5 : Fin 15)) i (words (5 : Fin 15) i) (added (5 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_006 (i : Fin 4) :
+    if special (6 : Fin 15) i then SeparatedAccepted (state (6 : Fin 15)) i (words (6 : Fin 15) i 0) (words (6 : Fin 15) i 1) (added (6 : Fin 15) i)
+    else AcceptedRecord (state (6 : Fin 15)) i (words (6 : Fin 15) i) (added (6 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_007 (i : Fin 4) :
+    if special (7 : Fin 15) i then SeparatedAccepted (state (7 : Fin 15)) i (words (7 : Fin 15) i 0) (words (7 : Fin 15) i 1) (added (7 : Fin 15) i)
+    else AcceptedRecord (state (7 : Fin 15)) i (words (7 : Fin 15) i) (added (7 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_008 (i : Fin 4) :
+    if special (8 : Fin 15) i then SeparatedAccepted (state (8 : Fin 15)) i (words (8 : Fin 15) i 0) (words (8 : Fin 15) i 1) (added (8 : Fin 15) i)
+    else AcceptedRecord (state (8 : Fin 15)) i (words (8 : Fin 15) i) (added (8 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_009 (i : Fin 4) :
+    if special (9 : Fin 15) i then SeparatedAccepted (state (9 : Fin 15)) i (words (9 : Fin 15) i 0) (words (9 : Fin 15) i 1) (added (9 : Fin 15) i)
+    else AcceptedRecord (state (9 : Fin 15)) i (words (9 : Fin 15) i) (added (9 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_010 (i : Fin 4) :
+    if special (10 : Fin 15) i then SeparatedAccepted (state (10 : Fin 15)) i (words (10 : Fin 15) i 0) (words (10 : Fin 15) i 1) (added (10 : Fin 15) i)
+    else AcceptedRecord (state (10 : Fin 15)) i (words (10 : Fin 15) i) (added (10 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_011 (i : Fin 4) :
+    if special (11 : Fin 15) i then SeparatedAccepted (state (11 : Fin 15)) i (words (11 : Fin 15) i 0) (words (11 : Fin 15) i 1) (added (11 : Fin 15) i)
+    else AcceptedRecord (state (11 : Fin 15)) i (words (11 : Fin 15) i) (added (11 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_012 (i : Fin 4) :
+    if special (12 : Fin 15) i then SeparatedAccepted (state (12 : Fin 15)) i (words (12 : Fin 15) i 0) (words (12 : Fin 15) i 1) (added (12 : Fin 15) i)
+    else AcceptedRecord (state (12 : Fin 15)) i (words (12 : Fin 15) i) (added (12 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_013 (i : Fin 4) :
+    if special (13 : Fin 15) i then SeparatedAccepted (state (13 : Fin 15)) i (words (13 : Fin 15) i 0) (words (13 : Fin 15) i 1) (added (13 : Fin 15) i)
+    else AcceptedRecord (state (13 : Fin 15)) i (words (13 : Fin 15) i) (added (13 : Fin 15) i) := by
+  fin_cases i <;> decide
+
+private theorem accepted_row_014 (i : Fin 4) :
+    if special (14 : Fin 15) i then SeparatedAccepted (state (14 : Fin 15)) i (words (14 : Fin 15) i 0) (words (14 : Fin 15) i 1) (added (14 : Fin 15) i)
+    else AcceptedRecord (state (14 : Fin 15)) i (words (14 : Fin 15) i) (added (14 : Fin 15) i) := by
+  fin_cases i <;> decide
+
 theorem accepted (o : Fin 15) (i : Fin 4) :
     if special o i then SeparatedAccepted (state o) i (words o i 0) (words o i 1) (added o i)
     else AcceptedRecord (state o) i (words o i) (added o i) := by
-  fin_cases o <;> fin_cases i <;> decide
+  fin_cases o
+  · exact accepted_row_000 i
+  · exact accepted_row_001 i
+  · exact accepted_row_002 i
+  · exact accepted_row_003 i
+  · exact accepted_row_004 i
+  · exact accepted_row_005 i
+  · exact accepted_row_006 i
+  · exact accepted_row_007 i
+  · exact accepted_row_008 i
+  · exact accepted_row_009 i
+  · exact accepted_row_010 i
+  · exact accepted_row_011 i
+  · exact accepted_row_012 i
+  · exact accepted_row_013 i
+  · exact accepted_row_014 i
+
 
 end Gallai.Certificate.SizeTwo.Rich.Catalogue.Block07
